@@ -1,3 +1,6 @@
+# PDF
+*.pdf
+
 # VS Code
 *.code-workspace
 
