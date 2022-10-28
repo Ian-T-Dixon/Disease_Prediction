@@ -27,7 +27,7 @@ The dataset contains four CSV files.
 
 ## Machine Learning Model
 
-The 2 models used are Random Forest Classifier and Support Vector Machines
+Random Forest Classifier will be used as a benchmark classification model. Support Vector Machines and Neural Networks will be investigated as viable multiclass classification models.
 
 * Symptom severity gives numerical weights to the severity of each symptom, and should be used as a feature in our ML model.
 
@@ -35,7 +35,8 @@ The 2 models used are Random Forest Classifier and Support Vector Machines
 
 SQL will be used to create a relational database with multiple tables for Disease Description, Disease Precautions, and the main dataset.
 
-
-
 ## Dashboard
-The trained ML model can be deployed to a webpage. Using Flask, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [symptom_precaution.csv](./Data/symptom_precaution.csv)
+The trained ML model can be deployed to a webpage. Using Flask/JavaScript, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [symptom_precaution.csv](./Data/symptom_precaution.csv) 
+
+## Team Communication Protocol
+The team meets twice per week via Zoom and uses Slack to communicate as needed. There is a Group Plan file to help document our upcoming goals and overall plan for the project.
