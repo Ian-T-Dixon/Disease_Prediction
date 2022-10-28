@@ -1,13 +1,20 @@
-# Final_Project
+# Disease Prediction
 
-A ML model can be trained to take a number of symptoms (X) and predict the causative illness (y).
+The basis of this project is to use one or more machine learning models that can make accurate predictions of a disease by taking in arguments for symptoms (X) and predict the causative illness (y).
 
 ## Dataset
-https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset
 
-[symptom_Description.csv](./Data/symptom_Description.csv) and [symptom_precaution.csv](./Data/symptom_precaution.csv) can be merged. These would be useful for a user-application (see Dashboard, below).
+[Disease Prediction Dataset](https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset)
 
-[symptom_severity](/Data/Symptom-severity.csv) gives numerical weights to the severity of each symptom. The severity should be included as feature in the ML model.
+### Data Cleaning
+
+* [symptom_Description.csv](./Data/symptom_Description.csv) and [symptom_precaution.csv](./Data/symptom_precaution.csv) can be merged to make them more useful for a user-application (see Dashboard section).
+
+* Symptom descriptions will need to be cleaned to remove random spaces before and after each description and achieve uniformity.
+
+## Machine Learning Model
+
+Symptom severity should be included as feature in the ML model. [Symptom_Severity](/Data/Symptom-severity.csv) gives numerical weights to the severity of each symptom. 
 
 Instead of the columns in the [dataset.csv](./Data/dataset.csv) being "symptom 1", "symptom 2", etc., they should be columns for every symptom, containing booleans (T/F).
 
