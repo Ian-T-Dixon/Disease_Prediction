@@ -1,32 +1,42 @@
-# Final_Project
+# Disease Prediction
 
-A ML model can be trained to interpret a number of symptoms (X) and predict the causative illness (y). This trained model can then be deployed to a webpage to accept user inputs and make real-time predictions.
+The basis of this project is to use one or more machine learning models that can make accurate predictions of a disease by taking in arguments for symptoms (X) and predict the causative illness (y). This trained model will then be deployed to a webpage to accept user inputs and make real-time predictions.
 
-## Technologies Used
+## Dataset
 
-* Python (Pandas, Flask, SciKitLearn, Keras)
-* SQL
-* Flask
-* D3.js (for dashboard, possibly)
+The dataset contains four CSV files.
 
-## Data Cleaning and Analysis
+* [Disease Dataset](https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset) consists of 41 diseases and 132 possible symptoms. Each disease has 120 "cases"
 
-Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
+* [Disease Description](./Data/symptom_Description.csv) is a list of the diseases with a brief description of each illness.
 
-## Database Storage
+* [Symptom Severity](/Data/Symptom-severity.csv) is a list of all symptoms with a weight to indicate severity.
 
-SQL will be used as the database.
+* [Symptom Precaution](./Data/symptom_precaution.csv) is a list of precautions to take for each disease.
 
-## Machine Learning
 
-RandomForestClassifier will be used as a benchmark classification model. Support Vector Machines and Neural Networks will be investigated as viable multiclass classification models.
+### Data Cleaning
 
-The model will use 132 boolean features as input and return one of 41 target diseases.
+* Symptom description and Symptom precaution csv's can be merged to make them more useful for a user-application (see Dashboard section).
+
+* Symptom descriptions will need to be cleaned to remove random spaces before and after each description and achieve uniformity. Can be achieve using the .strip() method.
+
+* The Disease Dataset will need to have the columns changed from "Symptom 1", "Symptom 2" to instead have each column be a specific symptom with each row containing booleans (T/F).
+
+* For all .csv's: "Prognosis" should be removed as symptom (not a symptom, does not appear in dataset). "Scurring" should be replaced with "scarring". For clarity, "silver like dusting" should be replaced with "blue-gray complexion (argyria)".
+
+## Machine Learning Model
+
+Random Forest Classifier will be used as a benchmark classification model. Support Vector Machines and Neural Networks will be investigated as viable multiclass classification models.
+
+* Symptom severity gives numerical weights to the severity of each symptom, and should be used as a feature in our ML model.
+
+## Database
+
+SQL will be used to create a relational database with multiple tables for Disease Description, Disease Precautions, and the main dataset.
 
 ## Dashboard
+The trained ML model can be deployed to a webpage. Using Flask/JavaScript, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [symptom_precaution.csv](./Data/symptom_precaution.csv) 
 
-The trained ML model can be deployed to a webpage. Using Flask, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [disease_precaution.csv](./Data/disease_precaution.csv). The illness most confused with the predicted illness can also be displayed, to assist with differential diagnosis.
-
-## Teamwork
-
-The team meets twice per week via Zoom and uses Slack to communicate as needed. There is a [Group Plan]() file to help document our upcoming goals and overall plan for the project.
+## Team Communication Protocol
+The team meets twice per week via Zoom and uses Slack to communicate as needed. There is a Group Plan file to help document our upcoming goals and overall plan for the project.
