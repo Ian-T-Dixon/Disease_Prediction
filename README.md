@@ -35,6 +35,8 @@ Random Forest Classifier will be used as a benchmark classification model. Suppo
 
 SQL will be used to create a relational database with multiple tables for Disease Description, Disease Precautions, and the main dataset.
 
+* The first step in setting up the SQL database with our dataset is to create tables to import the data that we have. 
+
 ## Dashboard
 The trained ML model can be deployed to a webpage. Using Flask/JavaScript, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [symptom_precaution.csv](./Data/symptom_precaution.csv) 
 
