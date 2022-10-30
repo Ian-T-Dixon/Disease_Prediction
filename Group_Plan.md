@@ -2,6 +2,26 @@
 
 This is to journal our upcoming goals and overall plan for the project. Accomplishments will be reverted to past tense when complete instead of deleted. This documentation will help us present our process and challenges to our peers and potential clients.
 
+## Data Pipeline
+
+<!-- This section should stay written in the present tense. -->
+
+1. Dataset is first cleaned of typographical errors and replacements are made to values for clarity.
+
+2. A new table is created from the cleaned dataset, with boolean values for each symptom.
+
+3. Cleaned dataset is uploaded to SQL database.
+
+4. ML model loads cleaned data.
+
+5. ML model is trained on loaded data.
+
+6. Flask/Heroku are used to bring trained ML model to dashboard.
+
+7. Dashboard calls stored tables (from database?) to present, for predicted illness, known symptoms and suggested precautions.
+
+8. Dashboard may also used a stored version of model's confusion matrix, to suggest possible differential diagnosis.
+
 ## Data Cleaning
 
 [disease_description.csv](./Data/disease_description.csv) and [disease_precaution.csv](./Data/disease_precaution.csv) can be merged. These would be useful for a user-application (see Dashboard, below). The DataFrames/tables should contain cleaned values before merging.
