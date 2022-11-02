@@ -1,0 +1,61 @@
+-- Creating the table for the primary dataset (the "Disease" column could not be used as a primary key value due to a repeat of one of the diseases)
+-- Import "dataset.csv"
+CREATE TABLE Disease_Cases (
+     Disease VARCHAR(40) NOT NULL,
+     Symptom_1 VARCHAR(40), 
+     Symptom_2 VARCHAR(40), 
+     Symptom_3 VARCHAR(40),
+     Symptom_4 VARCHAR(40),
+     Symptom_5 VARCHAR(40),
+     Symptom_6 VARCHAR(40),
+     Symptom_7 VARCHAR(40),
+     Symptom_8 VARCHAR(40),
+     Symptom_9 VARCHAR(40),
+     Symptom_10 VARCHAR(40),
+     Symptom_11 VARCHAR(40),
+     Symptom_12 VARCHAR(40),
+     Symptom_13 VARCHAR(40),
+     Symptom_14 VARCHAR(40),
+     Symptom_15 VARCHAR(40),
+     Symptom_16 VARCHAR(40),
+     Symptom_17 VARCHAR(40)
+);
+
+-- Creating a table to hold the disease descriptions
+-- Import "symptom_Description.csv"
+CREATE TABLE Disease_Description (
+     Disease VARCHAR(40) NOT NULL,
+     Description VARCHAR(400) NOT NULL, 
+    Primary Key(Disease)
+);
+
+-- Creating a table to show the weight of each symptom in each disease
+-- Import "Symptom-severity.csv"
+CREATE TABLE Symptom_Severity (
+     Symptom VARCHAR(40) NOT NULL,
+     Weight VARCHAR(2) NOT NULL
+);
+
+-- Creating a table to hold possible precuations you can take for a potential disease
+-- Import "symptom_precaution.csv"
+CREATE TABLE Disease_Precautions (
+     Disease VARCHAR(40) NOT NULL,
+     Precaution_1 VARCHAR(40), 
+     Precaution_2 VARCHAR(40), 
+     Precaution_3 VARCHAR(40),
+     Precaution_4 VARCHAR(40), 
+    Primary Key(Disease)
+);
+
+-- Creating a new table as a join of the disease discriptions and the precautions for that disease
+-- No import needed
+CREATE Table Disease_Info AS 
+  (SELECT disease_description.disease, 
+          disease_description.description,
+          disease_precautions.precaution_1, 
+          disease_precautions.precaution_2, 
+          disease_precautions.precaution_3,
+          disease_precautions.precaution_4
+   FROM   disease_description
+          INNER JOIN disease_precautions
+                  ON disease_description.disease =disease_precautions.disease);
