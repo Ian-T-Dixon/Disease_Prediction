@@ -1,6 +1,9 @@
 # Disease Prediction
 
-The basis of this project is to use one or more machine learning models that can make accurate predictions of a disease by taking in arguments for symptoms (X) and predict the causative illness (y). This trained model will then be deployed to a webpage to accept user inputs and make real-time predictions.
+The basis of this project is to use one or more machine learning models that can make accurate predictions of a disease by taking in arguments for symptoms (X) and predict the causative illness (y). This trained model will then be deployed to a webpage to accept user inputs and make real-time predictions. 
+
+## Why Disease Prediction?
+As a group, we wanted to work on something that we thought could have an impact on people. There are many people around the world suffering from various diseases. While this project will only function as a test, it is a good indication of what machine learning is capable of, and how it may be used in the future of healthcare.
 
 ## Dataset
 
@@ -13,6 +16,8 @@ The dataset contains four CSV files.
 * [Symptom Severity](/Data/Symptom-severity.csv) is a list of all symptoms with a weight to indicate severity.
 
 * [Symptom Precaution](./Data/symptom_precaution.csv) is a list of precautions to take for each disease.
+
+
 
 
 ### Data Cleaning
