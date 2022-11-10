@@ -43,6 +43,7 @@ SQL will be used to create a relational database with multiple tables for Diseas
   - "Symptom_Severity" (so that the symptoms of a disease can be weighed and more easily measured).
 * With our data imported, we use the "Disease_Descriptions" and "Disease_Precautions" tables to create a new joined table called "Disease_Info" with all information on the diseases. 
 * Now that we have some new tables, we can create new clean CSV files for them, and upload these to our repository Data section.
+* With the preliminary tables finished, an ERD can also be generated to illustrate the different relationships between the data tables.
 
 ## Dashboard
 The trained ML model can be deployed to a webpage. Using Flask/JavaScript, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [symptom_precaution.csv](./Data/symptom_precaution.csv) 
