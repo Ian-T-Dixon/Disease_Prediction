@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-light">
+    <div class="wrapper">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" href="https://github.com/Ian-T-Dixon/Disease_Prediction">Link to Github Repository</a>
+        </nav>
+        <div class="jumbotron">
+            <h1 class="display-4">Disease Prediction</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Is it possible to accurately predict a disease with machine learning?</h3>
+                </div>
+                <div class="col-md-9">
+                    <p>
+                        Our Disease Prediction model uses machine learning to accurately predict possible diseases based on a list of symptoms input by the user. Simply input all of the symptoms experienced
+                        and we will determine the likely illness. We will also show you the confidence in the prediction, a brief description of the illness, precautions to take, as well as a list of other possible
+                        diseases. If you are experiencing any of these symptoms, it is recommended to seek professional medical help.
+                    </p>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <select id="SymptomList"></select>
+                    </div>
+                    <div class="col-md-9">
+                        <table>
+                            <thead>
+                            <tr>
+                            <th>Likely Illness</th>
+                            <th>Confidence Level</th>
+                            <th>Description</th>
+                            <th>Precautions</th>
+                            <th>Other Possible Illnesses</th>
+                            <th>External Resources</th>
+                            </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="./static/js/symptoms.js"></script>
+</body>
+</html>
