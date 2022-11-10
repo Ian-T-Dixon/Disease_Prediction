@@ -46,6 +46,8 @@ SQL will be used to create a relational database with multiple tables for Diseas
 * With the preliminary tables finished, an ERD can also be generated to illustrate the different relationships between the data tables.
 ![ERD](ERD.JPG)
 
+* The ERD shows that, using the primary key of "Disease" from the Disease Description table and the Disease Precaution table, we can join the two tables to create the more complete Disease Information table. 
+
 ## Dashboard
 The trained ML model can be deployed to a webpage. Using Flask/JavaScript, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [symptom_precaution.csv](./Data/symptom_precaution.csv) 
 
