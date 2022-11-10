@@ -1,6 +1,9 @@
 # Disease Prediction
 
-The basis of this project is to use one or more machine learning models that can make accurate predictions of a disease by taking in arguments for symptoms (X) and predict the causative illness (y).
+The basis of this project is to use one or more machine learning models that can make accurate predictions of a disease by taking in arguments for symptoms (X) and predict the causative illness (y). This trained model will then be deployed to a webpage to accept user inputs and make real-time predictions. 
+
+## Why Disease Prediction?
+As a group, we wanted to work on something that we thought could have an impact on people. There are many people around the world suffering from various diseases. While this project will only function as a test, it is a good indication of what machine learning is capable of, and how it may be used in the future of healthcare.
 
 ## Dataset
 
@@ -15,6 +18,8 @@ The dataset contains four CSV files.
 * [Symptom Precaution](./Data/symptom_precaution.csv) is a list of precautions to take for each disease.
 
 
+
+
 ### Data Cleaning
 
 * Symptom description and Symptom precaution csv's can be merged to make them more useful for a user-application (see Dashboard section).
@@ -27,7 +32,7 @@ The dataset contains four CSV files.
 
 ## Machine Learning Model
 
-The 2 models used are Random Forest Classifier and Support Vector Machines
+Random Forest Classifier will be used as a benchmark classification model. Support Vector Machines and Neural Networks will be investigated as viable multiclass classification models.
 
 * Symptom severity gives numerical weights to the severity of each symptom, and should be used as a feature in our ML model.
 
@@ -35,7 +40,17 @@ The 2 models used are Random Forest Classifier and Support Vector Machines
 
 SQL will be used to create a relational database with multiple tables for Disease Description, Disease Precautions, and the main dataset.
 
-
+* The first step in setting up the SQL database with our dataset is to create tables to import the data that we have. 
+* The four tables initially created are:
+  - "Disease_Cases" (to show the symptoms found in each case of the diseases in our dataset) 
+  - "Disease_Descriptions" (to provide a breif description of the unique diseases in the dataset) 
+  - "Disease_Precautions" (to provide possible precautions one can take if potentially facing one of the diseases)
+  - "Symptom_Severity" (so that the symptoms of a disease can be weighed and more easily measured).
+* With our data imported, we use the "Disease_Descriptions" and "Disease_Precautions" tables to create a new joined table called "Disease_Info" with all information on the diseases. 
+* Now that we have some new tables, we can create new clean CSV files for them, and upload these to our repository Data section.
 
 ## Dashboard
-The trained ML model can be deployed to a webpage. Using Flask, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [symptom_precaution.csv](./Data/symptom_precaution.csv)
+The trained ML model can be deployed to a webpage. Using Flask/JavaScript, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [symptom_precaution.csv](./Data/symptom_precaution.csv) 
+
+## Team Communication Protocol
+The team meets twice per week via Zoom and uses Slack to communicate as needed. There is a Group Plan file to help document our upcoming goals and overall plan for the project.
