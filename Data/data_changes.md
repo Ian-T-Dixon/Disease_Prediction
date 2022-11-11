@@ -30,6 +30,10 @@ Changes to Symptoms:
 * "pus_filled_pimples" -> "pus-filled_pimples"
 * "toxic_look_(typhos)" -> "toxic_look_(toxemia)"
 * "yellow_crust_ooze" -> "yellow_oozing_scabs"
+* "continuous_feel_of_urine" -> "persistent_urge_to_urinate"
+* "fluid_overload" -> "fluid_overload_(hypervolemia)"
+* "acidity" -> "acid_reflux"
+* "inflammatory_nails" -> "inflammed_nails"
 
 * "fluid_overload" was originally duplicated. The severity weights for the duplicates (4, 6) were averaged together.
 * "prognosis" was removed (not a symptom, does not appear in dataset).
@@ -37,6 +41,8 @@ Changes to Symptoms:
 * In dataset.csv, all symptoms except "itching" were preceded with whitespace " ".
 * Some symptoms appeared with spaces and underscores, e.g. "dischromic _patches".
 * Removed any whitespaces from symptoms, then replaced "_" with " ".
+
+* The cleaned data includes categories for each symptom, to allow easier sorting by user on the dashboard.
 
 Changes to Diseases:
 
