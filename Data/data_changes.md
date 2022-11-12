@@ -40,8 +40,7 @@ Changes to Symptoms:
 
 Changes to Diseases:
 
-* "Dimorphic hemmorrhoids(piles)" -> "Hemorrhoids"
-* "Dimorphic hemorrhoids(piles)": "Hemorrhoids",
+* "Dimorphic hemorrhoids(piles)" -> "Hemorrhoids"
 * "Bronchial Asthma" -> "Bronchial asthma"
 * "Common Cold" -> "Common cold"
 * "Drug Reaction" -> "Drug reaction"
