@@ -41,11 +41,12 @@ Changes to Symptoms:
 Changes to Diseases:
 
 * "Dimorphic hemorrhoids(piles)" -> "Hemorrhoids"
+* "Dimorphic hemmorhoids(piles)" -> "Hemorrhoids"
 * "Bronchial Asthma" -> "Bronchial asthma"
 * "Common Cold" -> "Common cold"
 * "Drug Reaction" -> "Drug reaction"
 * "Paralysis (brain hemorrhage)" -> "Brain hemorrhage"
-* "(vertigo) Paroymsal  Positional Vertigo" -> "Paroxysmal positional vertigo"
+* "(vertigo) Paroymsal  Positional Vertigo" -> "Positional vertigo"
 * "Osteoarthristis" -> "Osteoarthritis"
 * "Typhoid" -> "Typhoid fever"
 
