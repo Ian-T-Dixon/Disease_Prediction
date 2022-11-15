@@ -37,21 +37,28 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
-                        <select id="SymptomList"></select>
+                        <h4> Symptom Options:</h4>
+                            <div class="symptoms-container">
+                                <form id="symptomList", onSubmit="createSymptomArray()", action="{{ url_for('predict')}}"method="post">
+                                    <div class="submit-section">
+                                        
+                                    </div>
+                                </form>
+                            </div>
+                            <br>
+                            <input type="submit" value="Submit" form="symptomList">
                     </div>
                     <div class="col-md-9">
-                        <table>
-                            <thead>
-                            <tr>
-                            <th>Likely Illness</th>
-                            <th>Confidence Level</th>
-                            <th>Description</th>
-                            <th>Precautions</th>
-                            <th>Other Possible Illnesses</th>
-                            <th>External Resources</th>
-                            </tr>
-                            </thead>
-                            <tbody></tbody>
+                        <div class="col-md-5">
+                            <div id="bar"></div>
+                          </div>
+                          <div class="col-md-5">
+                            <div id="gauge"></div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div id="bubble"></div>
                         </table>
                     </div>
                 </div>
