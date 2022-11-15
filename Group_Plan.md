@@ -18,9 +18,9 @@ This is to journal our upcoming goals and overall plan for the project. Accompli
 
 6. Flask/Heroku are used to bring trained ML model to dashboard.
 
-7. Dashboard calls stored tables (from database?) to present, for predicted illness, known symptoms and suggested precautions.
+7. Dashboard calls stored tables to present, for predicted illness, known symptoms and suggested precautions.
 
-8. Dashboard may also used a stored version of model's confusion matrix, to suggest possible differential diagnosis.
+8. Dashboard may also use a stored version of model's confusion matrix, to suggest possible differential diagnosis.
 
 ## Data Cleaning
 
@@ -42,9 +42,7 @@ Week 3 or 4: A table can be created with data from the ML model's confusion matr
 
 ## Machine Learning
 
-Week 1: Set up input/output skeleton of model.
-
-Week 2: Data preprocessing, feature engineering, split train/test data, choose model.
+Gaussian Radial Basis Function (RBF) is a kernel function that is highly preferred for non-linear data of unknown distribution.
 
 ## Dashboard
 

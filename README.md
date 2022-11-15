@@ -14,25 +14,33 @@ The dataset contains four CSV files.
 
 * [Symptom Severity](./Data/Cleaned/symptom_severity_clean.csv) is a list of all symptoms with a weight to indicate severity.
 
-* [Symptom Precaution](./Data/Cleaned/disease_precaution_clean.csv) is a list of precautions to take for each disease.
+* [Disease Precaution](./Data/Cleaned/disease_precaution_clean.csv) is a list of precautions to take for each disease.
 
-### Data Cleaning & Processing
+## Data Cleaning & Processing
 
 Many replacements were made to the dataset for the sake of clarity and consistency. The main dataset of disease symptoms per case was then transformed to contain columns for every possible symptom, each containing boolean values.
 
 <!-- Pictures of the DataFrame before and after boolean transformation -->
 
-This format can be much easier for any machine learning model to interpret, as it is already encoded/scaled.
+### Before
+![data_df](./Images/data_df.png)
+
+### After
+![bool_df](./Images/bool_df.png)
+
+This format is much easier for any machine learning model to interpret, as it is already encoded and scaled.
 
 ## Machine Learning Model
 
-Random Forest Classifier will be used as a benchmark classification model. Support vector machines and neural networks will be investigated.
+Decision Tree Classifier was used as a benchmark classification model. Support Vector Classifier was investigated for superior performance. Support vector machines (SVM) work well on small datasets with clear separation between boundaries and don't perform as well on datasets with much noise.
 
-Support vector machines work well on small datasets with clear separation between boundaries and don't perform as well on datasets with much noise. Neural networks can handle more complex problems but need more computational time and have more hyperparameters that can be adjusted.
+The dataset was filled with many duplicates; removing these duplicates would drop the sample size for each disease from 120 to 5-10. Retaining these duplicates proved to make the models more robust against overfitting. The small effective size of the unduplicated dataset was mitigated by using a SVM classifier and using a 50/50 split between training and test data. sklearn's train_test_split() was used to create the training and testing datasets.
 
-sklearn's train_test_split was used to create the training and testing datasets.
+Decision Tree Classifier was trained with a max depth of 10 to prevent overfitting. Similarly, many values for the SVM 'gamma' and 'C' parameters were tried, until a model with a reasonable accuracy score and confusion matrix were returned. An [online introduction](https://vitalflux.com/svm-rbf-kernel-parameters-code-sample/) to these parameters was used to guide the selection of their values. The RBF kernel was used for the SVM due to its suitability for nonlinear data that is not well-known or characterized.
 
-* Symptom severity gives numerical weights to the severity of each symptom, and could be used as a feature in our ML model.
+The decision tree benchmark performed decently at nearly 95% accuracy, yet the confusion matrix reveals a practical issue with the model: heart attacks are often falsely predicted as many other illnesses that don't require prompt medical attention.
+
+The support vector machine performs at a better 98% accuracy and has a less worrying confusion matrix. Variations of hepatitis are sometimes confused with each other or another liver illness, chronic cholestasis. Acne is sometimes misdiagnosed as a drug reaction, which should be straightforward for the end user to distinguish. This model appears to perform well in the context of accurately and reasonably diagnosing illness based on reported symptoms.
 
 ## Database
 
