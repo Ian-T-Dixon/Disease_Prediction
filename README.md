@@ -15,7 +15,7 @@ As a group, we wanted to work on something that we thought could have an impact 
 
 * sklearn, Decision Tree, Support Vector Machine
 
-* HTML, CSS, JS, Flask, Heroku
+* HTML, CSS, JavaScript, Flask, Heroku
 
 ## Dataset
 
