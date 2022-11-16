@@ -4,6 +4,16 @@ The basis of this project is to use one or more machine learning models that can
 
 [Link to Google Slides Presentation](https://docs.google.com/presentation/d/17sEjf6EPZSJ9EY5Vl9RA3tWl3OAGQc6XCYFe-FfR_w0/edit?usp=sharing)
 
+## Technologies Used
+
+* Python, Pandas, Matplotlib, Pickle
+
+* PostgreSQL, pgAdmin, SQLAlchemy
+
+* sklearn, Decision Tree, Support Vector Machine
+
+* HTML, CSS, JS, Flask, Heroku
+
 ## Dataset
 
 The dataset contains four CSV files.
@@ -20,8 +30,6 @@ The dataset contains four CSV files.
 
 Many replacements were made to the dataset for the sake of clarity and consistency. The main dataset of disease symptoms per case was then transformed to contain columns for every possible symptom, each containing boolean values.
 
-<!-- Pictures of the DataFrame before and after boolean transformation -->
-
 ### Before
 ![data_df](./Images/data_df.png)
 
@@ -36,11 +44,11 @@ Decision Tree Classifier was used as a benchmark classification model. Support V
 
 The dataset was filled with many duplicates; removing these duplicates would drop the sample size for each disease from 120 to 5-10. Retaining these duplicates proved to make the models more robust against overfitting. The small effective size of the unduplicated dataset was mitigated by using a SVM classifier and using a 50/50 split between training and test data. sklearn's train_test_split() was used to create the training and testing datasets.
 
-Decision Tree Classifier was trained with a max depth of 10 to prevent overfitting. Similarly, many values for the SVM 'gamma' and 'C' parameters were tried, until a model with a reasonable accuracy score and confusion matrix were returned. An [online introduction](https://vitalflux.com/svm-rbf-kernel-parameters-code-sample/) to these parameters was used to guide the selection of their values. The RBF kernel was used for the SVM due to its suitability for nonlinear data that is not well-known or characterized.
+Decision Tree Classifier was trained with a max depth of 10 to prevent overfitting. Similarly, many values for the SVM 'gamma' and 'C' parameters were tried, until a model with a reasonable accuracy score and confusion matrix was returned. An [online introduction](https://vitalflux.com/svm-rbf-kernel-parameters-code-sample/) to these parameters was used to guide the selection of their values. The RBF kernel was used for the SVM due to its suitability for nonlinear data that is not well-known or characterized.
 
-The decision tree benchmark performed decently at nearly 95% accuracy, yet the confusion matrix reveals a practical issue with the model: heart attacks are often falsely predicted as many other illnesses that don't require prompt medical attention.
+The decision tree benchmark performed decently at nearly 95% accuracy, yet the confusion matrix reveals a practical issue with the model: many illnesses are sometimes falsely predicted as heart attacks!
 
-The support vector machine performs at a better 98% accuracy and has a less worrying confusion matrix. Variations of hepatitis are sometimes confused with each other or another liver illness, chronic cholestasis. Acne is sometimes misdiagnosed as a drug reaction, which should be straightforward for the end user to distinguish. This model appears to perform well in the context of accurately and reasonably diagnosing illness based on reported symptoms.
+The support vector machine performs at a better 98% accuracy and has a less worrying confusion matrix. Variations of hepatitis are sometimes confused with each other or another liver illness, chronic cholestasis. Drug reaction is sometimes misdiagnosed as acne, which should be straightforward for the end user to distinguish. This model appears to perform well in the context of accurately and reasonably diagnosing illness based on reported symptoms.
 
 ## Database
 
