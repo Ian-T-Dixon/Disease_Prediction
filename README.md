@@ -12,7 +12,7 @@ The basis of this project is to use one or more machine learning models that can
 
 * sklearn, Decision Tree, Support Vector Machine
 
-* HTML, CSS, JS, Flask, Heroku
+* HTML, CSS, JavaScript, Flask, Heroku
 
 ## Dataset
 
