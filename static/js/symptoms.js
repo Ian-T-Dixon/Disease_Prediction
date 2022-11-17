@@ -39,10 +39,10 @@ function createSymptomArray() {
   for (var i = 0; i < checkboxes.length; i++) {
     var checkbox = checkboxes[i];
     if (checkbox.checked) {
-      outputDict[i] = true
+      outputDict[checkbox.value] = true
   }
     else {
-      outputDict[i] = false
+      outputDict[checkbox.value] = false
     }
   }
     console.log(JSON.stringify(outputDict))
