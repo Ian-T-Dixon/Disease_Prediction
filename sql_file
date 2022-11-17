@@ -1,5 +1,5 @@
 -- Creating the table for the primary dataset (the "Disease" column could not be used as a primary key value due to a repeat of one of the diseases)
--- Import "dataset.csv"
+-- Import "dataset_clean.csv"
 CREATE TABLE Disease_Cases (
      Disease VARCHAR(40) NOT NULL,
      Symptom_1 VARCHAR(40), 
@@ -22,7 +22,7 @@ CREATE TABLE Disease_Cases (
 );
 
 -- Creating a table to hold the disease descriptions
--- Import "symptom_Description.csv"
+-- Import "disease_description_clean.csv"
 CREATE TABLE Disease_Description (
      Disease VARCHAR(40) NOT NULL,
      Description VARCHAR(400) NOT NULL, 
@@ -30,7 +30,7 @@ CREATE TABLE Disease_Description (
 );
 
 -- Creating a table to show the weight of each symptom in each disease
--- Import "Symptom-severity.csv"
+-- Import "symptom-severity_clean.csv"
 CREATE TABLE Symptom_Severity (
      Symptom VARCHAR(40) NOT NULL,
      Weight VARCHAR(2) NOT NULL
@@ -40,10 +40,10 @@ CREATE TABLE Symptom_Severity (
 -- Import "symptom_precaution.csv"
 CREATE TABLE Disease_Precautions (
      Disease VARCHAR(40) NOT NULL,
-     Precaution_1 VARCHAR(40), 
-     Precaution_2 VARCHAR(40), 
-     Precaution_3 VARCHAR(40),
-     Precaution_4 VARCHAR(40), 
+     Precaution_1 VARCHAR(60), 
+     Precaution_2 VARCHAR(60), 
+     Precaution_3 VARCHAR(60),
+     Precaution_4 VARCHAR(60), 
     Primary Key(Disease)
 );
 
@@ -59,3 +59,147 @@ CREATE Table Disease_Info AS
    FROM   disease_description
           INNER JOIN disease_precautions
                   ON disease_description.disease =disease_precautions.disease);
+                  
+-- With a new file created to show the all of the symptoms as true or false Boolean values for each disease, a new table is needed to store that data as well
+-- Import "dataset_bool.csv"
+
+CREATE TABLE dataset_bool (
+   Index                          INTEGER 
+  ,Disease                        VARCHAR(30) NOT NULL
+  ,abdominal_pain                 BOOLEAN  NOT NULL
+  ,abnormal_menstruation          BOOLEAN  NOT NULL
+  ,acidity                        BOOLEAN  NOT NULL
+  ,acute_liver_failure            BOOLEAN  NOT NULL
+  ,altered_mental_state           BOOLEAN  NOT NULL
+  ,anxiety                        BOOLEAN  NOT NULL
+  ,back_pain                      BOOLEAN  NOT NULL
+  ,belly_pain                     BOOLEAN  NOT NULL
+  ,blackheads                     BOOLEAN  NOT NULL
+  ,bladder_discomfort             BOOLEAN  NOT NULL
+  ,blister                        BOOLEAN  NOT NULL
+  ,blood_in_sputum                BOOLEAN  NOT NULL
+  ,bloody_stool                   BOOLEAN  NOT NULL
+  ,bluegray_complexion_argyria    BOOLEAN  NOT NULL
+  ,blurred_and_distorted_vision   BOOLEAN  NOT NULL
+  ,breathlessness                 BOOLEAN  NOT NULL
+  ,brittle_nails                  BOOLEAN  NOT NULL
+  ,bruising                       BOOLEAN  NOT NULL
+  ,chest_pain                     BOOLEAN  NOT NULL
+  ,chills                         BOOLEAN  NOT NULL
+  ,cold_hands_and_feet            BOOLEAN  NOT NULL
+  ,coma                           BOOLEAN  NOT NULL
+  ,congestion                     BOOLEAN  NOT NULL
+  ,constipation                   BOOLEAN  NOT NULL
+  ,continuous_feel_of_urine       BOOLEAN  NOT NULL
+  ,continuous_sneezing            BOOLEAN  NOT NULL
+  ,cough                          BOOLEAN  NOT NULL
+  ,cramps                         BOOLEAN  NOT NULL
+  ,dark_urine                     BOOLEAN  NOT NULL
+  ,dehydration                    BOOLEAN  NOT NULL
+  ,depression                     BOOLEAN  NOT NULL
+  ,diarrhea                       BOOLEAN  NOT NULL
+  ,distention_of_abdomen          BOOLEAN  NOT NULL
+  ,dizziness                      BOOLEAN  NOT NULL
+  ,drying_and_tingling_lips       BOOLEAN  NOT NULL
+  ,enlarged_thyroid               BOOLEAN  NOT NULL
+  ,excessive_hunger               BOOLEAN  NOT NULL
+  ,excessive_urination            BOOLEAN  NOT NULL
+  ,extra_marital_contacts         BOOLEAN  NOT NULL
+  ,family_history                 BOOLEAN  NOT NULL
+  ,fast_heart_rate                BOOLEAN  NOT NULL
+  ,fatigue                        BOOLEAN  NOT NULL
+  ,fluid_overload                 BOOLEAN  NOT NULL
+  ,foul_smell_of_urine            BOOLEAN  NOT NULL
+  ,headache                       BOOLEAN  NOT NULL
+  ,high_fever                     BOOLEAN  NOT NULL
+  ,hip_joint_pain                 BOOLEAN  NOT NULL
+  ,history_of_alcohol_consumption BOOLEAN  NOT NULL
+  ,increased_appetite             BOOLEAN  NOT NULL
+  ,indigestion                    BOOLEAN  NOT NULL
+  ,inflammatory_nails             BOOLEAN  NOT NULL
+  ,internal_itching               BOOLEAN  NOT NULL
+  ,irregular_sugar_level          BOOLEAN  NOT NULL
+  ,irritability                   BOOLEAN  NOT NULL
+  ,irritation_in_anus             BOOLEAN  NOT NULL
+  ,itching                        BOOLEAN  NOT NULL
+  ,joint_pain                     BOOLEAN  NOT NULL
+  ,knee_pain                      BOOLEAN  NOT NULL
+  ,lack_of_concentration          BOOLEAN  NOT NULL
+  ,lethargy                       BOOLEAN  NOT NULL
+  ,loss_of_appetite               BOOLEAN  NOT NULL
+  ,loss_of_balance                BOOLEAN  NOT NULL
+  ,loss_of_smell                  BOOLEAN  NOT NULL
+  ,malaise                        BOOLEAN  NOT NULL
+  ,mild_fever                     BOOLEAN  NOT NULL
+  ,mood_swings                    BOOLEAN  NOT NULL
+  ,mottling_skin                  BOOLEAN  NOT NULL
+  ,movement_stiffness             BOOLEAN  NOT NULL
+  ,mucoid_sputum                  BOOLEAN  NOT NULL
+  ,muscle_pain                    BOOLEAN  NOT NULL
+  ,muscle_wasting                 BOOLEAN  NOT NULL
+  ,muscle_weakness                BOOLEAN  NOT NULL
+  ,nausea                         BOOLEAN  NOT NULL
+  ,neck_pain                      BOOLEAN  NOT NULL
+  ,nodal_skin_eruptions           BOOLEAN  NOT NULL
+  ,obesity                        BOOLEAN  NOT NULL
+  ,pain_behind_the_eyes           BOOLEAN  NOT NULL
+  ,pain_during_bowel_movements    BOOLEAN  NOT NULL
+  ,pain_in_anal_region            BOOLEAN  NOT NULL
+  ,painful_urination              BOOLEAN  NOT NULL
+  ,painful_walking                BOOLEAN  NOT NULL
+  ,palpitations                   BOOLEAN  NOT NULL
+  ,passage_of_gases               BOOLEAN  NOT NULL
+  ,patches_in_throat              BOOLEAN  NOT NULL
+  ,phlegm                         BOOLEAN  NOT NULL
+  ,prominent_veins_on_calf        BOOLEAN  NOT NULL
+  ,puffy_face_and_eyes            BOOLEAN  NOT NULL
+  ,pusfilled_pimples              BOOLEAN  NOT NULL
+  ,receiving_blood_transfusion    BOOLEAN  NOT NULL
+  ,receiving_unsterile_injections BOOLEAN  NOT NULL
+  ,red_sore_around_nose           BOOLEAN  NOT NULL
+  ,red_spots_over_body            BOOLEAN  NOT NULL
+  ,redness_of_eyes                BOOLEAN  NOT NULL
+  ,restlessness                   BOOLEAN  NOT NULL
+  ,runny_nose                     BOOLEAN  NOT NULL
+  ,rusty_sputum                   BOOLEAN  NOT NULL
+  ,scarring                       BOOLEAN  NOT NULL
+  ,shivering                      BOOLEAN  NOT NULL
+  ,sinus_pressure                 BOOLEAN  NOT NULL
+  ,skin_peeling                   BOOLEAN  NOT NULL
+  ,skin_rash                      BOOLEAN  NOT NULL
+  ,slurred_speech                 BOOLEAN  NOT NULL
+  ,small_dents_in_nails           BOOLEAN  NOT NULL
+  ,spinning_movements             BOOLEAN  NOT NULL
+  ,spotting_urination             BOOLEAN  NOT NULL
+  ,stiff_neck                     BOOLEAN  NOT NULL
+  ,stomach_bleeding               BOOLEAN  NOT NULL
+  ,stomach_pain                   BOOLEAN  NOT NULL
+  ,sunken_eyes                    BOOLEAN  NOT NULL
+  ,sweating                       BOOLEAN  NOT NULL
+  ,swelled_lymph_nodes            BOOLEAN  NOT NULL
+  ,swelling_joints                BOOLEAN  NOT NULL
+  ,swelling_of_stomach            BOOLEAN  NOT NULL
+  ,swollen_blood_vessels          BOOLEAN  NOT NULL
+  ,swollen_extremities            BOOLEAN  NOT NULL
+  ,swollen_legs                   BOOLEAN  NOT NULL
+  ,throat_irritation              BOOLEAN  NOT NULL
+  ,toxic_look_toxemia             BOOLEAN  NOT NULL
+  ,ulcers_on_tongue               BOOLEAN  NOT NULL
+  ,unsteadiness                   BOOLEAN  NOT NULL
+  ,visual_disturbances            BOOLEAN  NOT NULL
+  ,vomiting                       BOOLEAN  NOT NULL
+  ,watering_from_eyes             BOOLEAN  NOT NULL
+  ,weakness_in_limbs              BOOLEAN  NOT NULL
+  ,weakness_of_one_body_side      BOOLEAN  NOT NULL
+  ,weight_gain                    BOOLEAN  NOT NULL
+  ,weight_loss                    BOOLEAN  NOT NULL
+  ,yellow_oozing_scabs            BOOLEAN  NOT NULL
+  ,yellow_urine                   BOOLEAN  NOT NULL
+  ,yellowing_of_eyes              BOOLEAN  NOT NULL
+  ,yellowish_skin                 BOOLEAN  NOT NULL
+);
+
+-- Now that the data is stored in the newly created table, we can edit the table to drop the "index" collumn.
+
+ALTER TABLE dataset_bool
+  DROP COLUMN index;
