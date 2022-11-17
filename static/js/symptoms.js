@@ -45,9 +45,32 @@ function createSymptomArray() {
       outputDict[checkbox.value] = false
     }
   }
-    console.log(JSON.stringify(outputDict))
-    return JSON.stringify(outputDict)
-  
+    delete outputDict.Submit
+    console.log(outputDict)
+// sends json filetype to flask
+    fetch('/predict', {
+      headers : {
+          'Content-Type' : 'application/json'
+      },
+      method : 'POST',
+      body : JSON.stringify(outputDict)
+  })
+  .then(function (response){
+
+      if(response.ok) {
+          response.json()
+          .then(function(response) {
+              console.log(response);
+          });
+      }
+      else {
+          throw Error('Something went wrong');
+      }
+  })
+  .catch(function(error) {
+      console.log(error);
+  });
+}
   //// working code for creating an array with true/flse values.  
   // for (var i = 0; i < checkboxes.length; i++) {
   //   var checkbox = checkboxes[i];
@@ -63,5 +86,3 @@ function createSymptomArray() {
   //   outputDict[symptom] = g
   // }
 // console.log(outputArray)
-  
-}
