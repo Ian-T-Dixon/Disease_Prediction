@@ -1,35 +1,41 @@
 # Disease Prediction
 
-The basis of this project is to use one or more machine learning models that can make accurate predictions of a disease by taking in arguments for symptoms (X) and predict the causative illness (y). This trained model will then be deployed to a webpage to accept user inputs and make real-time predictions.
+The basis of this project is to use one or more machine learning models that can make accurate predictions of a disease by taking in arguments for symptoms (X) and predict the causative illness (y). This trained model will then be deployed to a webpage to accept user inputs and make real-time predictions. 
+
+## Why Disease Prediction?
+As a group, we wanted to work on something that we thought could have an impact on people. There are many people around the world suffering from various diseases. While this project will only function as a test, it is a good indication of what machine learning is capable of, and how it may be used in the future of healthcare.
+
+[Link to Google Slides Presentation](https://docs.google.com/presentation/d/17sEjf6EPZSJ9EY5Vl9RA3tWl3OAGQc6XCYFe-FfR_w0/edit?usp=sharing)
 
 ## Dataset
 
 The dataset contains four CSV files.
 
-* [Disease Dataset](https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset) consists of 41 diseases and 132 possible symptoms. Each disease has 120 "cases"
+* [Disease Dataset](./Data/Cleaned/dataset_clean.csv) consists of 41 diseases and 131 possible symptoms. Each disease has 120 cases or incidences.
 
-* [Disease Description](./Data/symptom_Description.csv) is a list of the diseases with a brief description of each illness.
+* [Disease Description](./Data/Cleaned/disease_description_clean.csv) is a list of the diseases with a brief description of each illness.
 
-* [Symptom Severity](/Data/Symptom-severity.csv) is a list of all symptoms with a weight to indicate severity.
+* [Symptom Severity](./Data/Cleaned/symptom_severity_clean.csv) is a list of all symptoms with a weight to indicate severity.
 
-* [Symptom Precaution](./Data/symptom_precaution.csv) is a list of precautions to take for each disease.
+* [Symptom Precaution](./Data/Cleaned/disease_precaution_clean.csv) is a list of precautions to take for each disease.
 
+### Data Cleaning & Processing
 
-### Data Cleaning
+Many replacements were made to the dataset for the sake of clarity and consistency. The main dataset of disease symptoms per case was then transformed to contain columns for every possible symptom, each containing boolean values.
 
-* Symptom description and Symptom precaution csv's can be merged to make them more useful for a user-application (see Dashboard section).
+<!-- Pictures of the DataFrame before and after boolean transformation -->
 
-* Symptom descriptions will need to be cleaned to remove random spaces before and after each description and achieve uniformity. Can be achieve using the .strip() method.
-
-* The Disease Dataset will need to have the columns changed from "Symptom 1", "Symptom 2" to instead have each column be a specific symptom with each row containing booleans (T/F).
-
-* For all .csv's: "Prognosis" should be removed as symptom (not a symptom, does not appear in dataset). "Scurring" should be replaced with "scarring". For clarity, "silver like dusting" should be replaced with "blue-gray complexion (argyria)".
+This format can be much easier for any machine learning model to interpret, as it is already encoded/scaled.
 
 ## Machine Learning Model
 
-Random Forest Classifier will be used as a benchmark classification model. Support Vector Machines and Neural Networks will be investigated as viable multiclass classification models.
+Random Forest Classifier will be used as a benchmark classification model. Support vector machines and neural networks will be investigated.
 
-* Symptom severity gives numerical weights to the severity of each symptom, and should be used as a feature in our ML model.
+Support vector machines work well on small datasets with clear separation between boundaries and don't perform as well on datasets with much noise. Neural networks can handle more complex problems but need more computational time and have more hyperparameters that can be adjusted.
+
+sklearn's train_test_split was used to create the training and testing datasets.
+
+* Symptom severity gives numerical weights to the severity of each symptom, and could be used as a feature in our ML model.
 
 ## Database
 
@@ -38,7 +44,7 @@ SQL will be used to create a relational database with multiple tables for Diseas
 * The first step in setting up the SQL database with our dataset is to create tables to import the data that we have. 
 * The four tables initially created are:
   - "Disease_Cases" (to show the symptoms found in each case of the diseases in our dataset) 
-  - "Disease_Descriptions" (to provide a breif description of the unique diseases in the dataset) 
+  - "Disease_Descriptions" (to provide a brief description of the unique diseases in the dataset) 
   - "Disease_Precautions" (to provide possible precautions one can take if potentially facing one of the diseases)
   - "Symptom_Severity" (so that the symptoms of a disease can be weighed and more easily measured).
 * With our data imported, we use the "Disease_Descriptions" and "Disease_Precautions" tables to create a new joined table called "Disease_Info" with all information on the diseases. 

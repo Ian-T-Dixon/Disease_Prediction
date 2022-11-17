@@ -1,3 +1,9 @@
+# config
+config.py
+
+# PDF
+*.pdf
+
 # VS Code
 *.code-workspace
 
