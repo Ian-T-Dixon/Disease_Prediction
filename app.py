@@ -17,7 +17,7 @@ def predict():
     # return jsonify(symptoms)
     if request.method == "POST":
         bool_dict = request.get_json()
-        print(bool_dict.type())
+        print(bool_dict)
         
         list_features = [True if bool(bool_dict[key]) else False
         # Iterate through symptoms alphabetically
