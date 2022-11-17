@@ -50,12 +50,13 @@ SQL will be used to create a relational database with multiple tables for Diseas
 * With our data imported, we use the "Disease_Descriptions" and "Disease_Precautions" tables to create a new joined table called "Disease_Info" with all information on the diseases. 
 * Now that we have some new tables, we can create new clean CSV files for them, and upload these to our repository Data section.
 * With the preliminary tables finished, an ERD can also be generated to illustrate the different relationships between the data tables.
-![ERD](ERD.JPG)
+![ERD](Images/ERD.JPG)
 
 * The ERD shows that, using the primary key of "Disease" from the Disease Description table and the Disease Precaution table, we can join the two tables to create the more complete Disease Information table. 
 
 * With the data cleaning process being complete, the Database was updated to use the new sets of clean data for the existing tables. These tables were then used to replace the initial SQL csv files that were created.
 * Along with the updated tables, a new table was created for the Boolean values dataset. This tables contains a collumn for the Dieseases, as well as a collumn for each of the different 131 different symptoms. 
+![Boolean_snippet](Images/Boolean_table_example.JPG)
 
 ## Dashboard
 The trained ML model can be deployed to a webpage. Using Flask/JavaScript, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [symptom_precaution.csv](./Data/symptom_precaution.csv) 
