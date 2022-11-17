@@ -7,8 +7,6 @@ function init() {
     var symptomNames = data.ID;
     symptomArray = Object.values(symptomNames);
 
-    
-
     symptomArray.forEach(symptom => {
       selector
         .append("h6")
@@ -16,7 +14,8 @@ function init() {
         .append("input")
         .property("type", "checkbox")
         .property("value", symptom)
-        .property("id", symptom);
+        .property("id", symptom)
+        .property("name", "symptom")
       selector
         .append("label")
         .property("for", symptom)
@@ -34,14 +33,35 @@ init();
 function createSymptomArray() {
   var checkboxes = document.getElementById("symptomList");
   var outputArray = []
+  var outputDict = {}
+  
+  // Loop through checkboxes and create a dictionary with true/false values.
   for (var i = 0; i < checkboxes.length; i++) {
     var checkbox = checkboxes[i];
     if (checkbox.checked) {
-      outputArray.push(1);
+      outputDict[i] = true
   }
     else {
-      outputArray.push(0);
+      outputDict[i] = false
     }
   }
-  console.log(outputArray);
+    console.log(JSON.stringify(outputDict))
+    return JSON.stringify(outputDict)
+  
+  //// working code for creating an array with true/flse values.  
+  // for (var i = 0; i < checkboxes.length; i++) {
+  //   var checkbox = checkboxes[i];
+  //   if (checkbox.checked) {
+  //     outputArray.push(true);
+  // }
+  //   else {
+  //     outputArray.push(false);
+  //   }
+  // }
+  // for (var g = 0; g < outputArray.length; g++) {
+  //   var symptom = outputArray[g];
+  //   outputDict[symptom] = g
+  // }
+// console.log(outputArray)
+  
 }
