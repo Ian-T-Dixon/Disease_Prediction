@@ -15,6 +15,7 @@ The following replacements were done across all four .csv files using Pandas.
 
 ## Changes to Symptoms
 
+* "acidity" -> "heartburn"
 * "scurring" -> "scarring"
 * "diarrhoea" -> "diarrhea"
 * "cold_hands_and_feets" -> "cold_hands_and_feet"
