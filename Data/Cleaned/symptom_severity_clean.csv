@@ -1,132 +1,132 @@
-Symptom,weight
-coma,7
-high fever,7
-swelling of stomach,7
-chest pain,7
-weakness in limbs,7
-patches in throat,6
-stomach bleeding,6
-malaise,6
-swelled lymph nodes,6
-spinning movements,6
-spotting urination,6
-diarrhea,6
-pain in anal region,6
-prominent veins on calf,6
-continuous feel of urine,6
-acute liver failure,6
-irritation in anus,6
-enlarged thyroid,6
-mottling skin,6
-abnormal menstruation,6
-painful urination,6
-fluid overload,5
-extra marital contacts,5
-mild fever,5
-phlegm,5
-blurred and distorted vision,5
-swollen extremities,5
-redness of eyes,5
-brittle nails,5
-runny nose,5
-family history,5
-fast heart rate,5
-pain during bowel movements,5
-bloody stool,5
-neck pain,5
-puffy face and eyes,5
-congestion,5
-swelling joints,5
-irregular sugar level,5
-restlessness,5
-shivering,5
-toxic look (toxemia),5
-stomach pain,5
-passage of gases,5
-vomiting,5
-foul smell of urine,5
-blood in sputum,5
-cold hands and feet,5
-history of alcohol consumption,5
-swollen blood vessels,5
-indigestion,5
-movement stiffness,5
-increased appetite,5
-receiving blood transfusion,5
-nausea,5
-swollen legs,5
-stiff neck,4
-internal itching,4
-drying and tingling lips,4
-unsteadiness,4
-weakness of one body side,4
-bladder discomfort,4
-loss of balance,4
-watering from eyes,4
-excessive hunger,4
-slurred speech,4
-excessive urination,4
-cramps,4
-obesity,4
-dark urine,4
-nodal skin eruptions,4
-continuous sneezing,4
-blister,4
-palpitations,4
-ulcers on tongue,4
-fatigue,4
-anxiety,4
-distention of abdomen,4
-cough,4
-breathlessness,4
-dehydration,4
-bruising,4
-belly pain,4
-loss of appetite,4
-pain behind the eyes,4
-rusty sputum,4
-constipation,4
-abdominal pain,4
-yellow urine,4
-yellowing of eyes,4
-throat irritation,4
-sinus pressure,4
-dizziness,4
-mucoid sputum,4
-visual disturbances,3
-red spots over body,3
-skin peeling,3
-lack of concentration,3
-yellow oozing scabs,3
-weight loss,3
-yellowish skin,3
-acidity,3
-muscle wasting,3
-weight gain,3
-mood swings,3
-joint pain,3
-sunken eyes,3
-sweating,3
-headache,3
-back pain,3
-skin rash,3
-knee pain,3
-chills,3
-loss of smell,3
-depression,3
-blackheads,2
-small dents in nails,2
-blue-gray complexion (argyria),2
-inflammatory nails,2
-red sore around nose,2
-scarring,2
-altered mental state,2
-pus-filled pimples,2
-painful walking,2
-muscle pain,2
-lethargy,2
-receiving unsterile injections,2
-hip joint pain,2
-muscle weakness,2
-irritability,2
-itching,1
+Symptom,weight,Category 1,Category 2
+coma,7,nervous,sensory
+high fever,7,internal,
+swelling of stomach,7,gastrointestinal,
+chest pain,7,internal,
+weakness in limbs,7,internal,sensory
+patches in throat,6,mouth,respiratory
+stomach bleeding,6,gastrointestinal,
+malaise,6,internal,sensory
+swelled lymph nodes,6,immune,
+spinning movements,6,sensory,head
+spotting urination,6,urinary,
+diarrhea,6,gastrointestinal,
+pain in anal region,6,gastrointestinal,
+prominent veins on calf,6,skin,circulatory
+persistent urge to urinate,6,urinary,
+acute liver failure,6,internal,
+irritation in anus,6,gastrointestinal,
+enlarged thyroid,6,internal,head
+mottling skin,6,skin,
+abnormal menstruation,6,internal,circulatory
+painful urination,6,urinary,
+fluid overload (hypervolemia),5,internal,
+extra marital contacts,5,reproductive,history
+mild fever,5,internal,
+phlegm,5,respiratory,
+blurred and distorted vision,5,sensory,
+swollen extremities,5,internal,circulatory
+redness of eyes,5,sensory,circulatory
+brittle nails,5,skin,
+runny nose,5,respiratory,
+family history,5,internal,history
+fast heart rate,5,circulatory,
+pain during bowel movements,5,gastrointestinal,
+bloody stool,5,gastrointestinal,
+neck pain,5,musculoskeletal,
+puffy face and eyes,5,sensory,head
+congestion,5,respiratory,
+swelling joints,5,musculoskeletal,circulatory
+irregular sugar level,5,circulatory,
+restlessness,5,nervous,sensory
+shivering,5,internal,
+toxic look (toxemia),5,internal,
+stomach pain,5,gastrointestinal,
+passage of gases,5,gastrointestinal,
+vomiting,5,gastrointestinal,
+foul smell of urine,5,urinary,
+blood in sputum,5,respiratory,
+cold hands and feet,5,skin,circulatory
+history of alcohol consumption,5,internal,history
+swollen blood vessels,5,circulatory,
+indigestion,5,gastrointestinal,
+movement stiffness,5,musculoskeletal,
+increased appetite,5,gastrointestinal,
+receiving blood transfusion,5,circulatory,history
+nausea,5,internal,
+swollen legs,5,circulatory,
+stiff neck,4,musculoskeletal,head
+internal itching,4,internal,
+drying and tingling lips,4,skin,
+unsteadiness,4,internal,sensory
+weakness of one body side,4,internal,sensory
+bladder discomfort,4,urinary,
+loss of balance,4,sensory,internal
+watering from eyes,4,sensory,head
+excessive hunger,4,gastrointestinal,
+slurred speech,4,sensory,nervous
+excessive urination,4,urinary,
+cramps,4,musculoskeletal,
+obesity,4,musculoskeletal,
+dark urine,4,urinary,
+nodal skin eruptions,4,skin,
+continuous sneezing,4,respiratory,
+blister,4,skin,
+palpitations,4,circulatory,
+ulcers on tongue,4,sensory,head
+fatigue,4,internal,sensory
+anxiety,4,nervous,sensory
+distention of abdomen,4,gastrointestinal,circulatory
+cough,4,respiratory,
+breathlessness,4,respiratory,
+dehydration,4,internal,
+bruising,4,musculoskeletal,
+belly pain,4,gastrointestinal,
+loss of appetite,4,gastrointestinal,
+pain behind the eyes,4,sensory,head
+rusty sputum,4,respiratory,
+constipation,4,gastrointestinal,
+abdominal pain,4,gastrointestinal,internal
+yellow urine,4,urinary,
+yellowing of eyes,4,sensory,head
+throat irritation,4,respiratory,head
+sinus pressure,4,respiratory,head
+dizziness,4,sensory,head
+mucoid sputum,4,respiratory,
+visual disturbances,3,sensory,
+red spots over body,3,skin,
+skin peeling,3,skin,
+lack of concentration,3,nervous,sensory
+yellow oozing scabs,3,skin,
+weight loss,3,internal,
+yellowish skin,3,skin,
+heartburn,3,gastrointestinal,
+muscle wasting,3,musculoskeletal,
+weight gain,3,internal,
+mood swings,3,nervous,
+joint pain,3,musculoskeletal,
+sunken eyes,3,sensory,head
+sweating,3,skin,
+headache,3,sensory,head
+back pain,3,musculoskeletal,
+skin rash,3,skin,
+knee pain,3,musculoskeletal,
+chills,3,internal,sensory
+loss of smell,3,sensory,head
+depression,3,nervous,
+blackheads,2,skin,
+small dents in nails,2,skin,
+blue-gray complexion (argyria),2,skin,
+inflammed nails,2,skin,
+red sore around nose,2,skin,head
+scarring,2,skin,
+altered mental state,2,nervous,
+pus-filled pimples,2,skin,
+painful walking,2,musculoskeletal,
+muscle pain,2,musculoskeletal,
+lethargy,2,nervous,
+receiving unsterile injections,2,circulatory,history
+hip joint pain,2,musculoskeletal,
+muscle weakness,2,musculoskeletal,
+irritability,2,nervous,
+itching,1,skin,sensory
