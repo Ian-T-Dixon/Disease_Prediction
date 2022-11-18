@@ -1,6 +1,6 @@
 # Disease Prediction
 
-There are many people around the world suffering from various diseases. These diseases, each requiring unique treatment, can be diagnosed by the symptoms they cause. We aim to create a machine learning model that can make accurate predictions using symptoms experienced to predict the causative illness. This trained model will then be deployed to a webpage to accept user inputs and make real-time predictions. We hope to showcase how ETL data analysis, full-stack development, and machine learning can be used to impact human well-being in the future of healthcare.
+There are many people around the world suffering from various diseases. These diseases, each requiring unique treatment, can be diagnosed by the symptoms they cause. We aim to create a machine learning model that can make accurate predictions using symptoms experienced to predict the causative illness. This trained model will then be deployed to a webpage to accept user inputs and make real-time predictions. A database can be simultaneously be queried to load stored information on the predicted illness, including treatment options. We hope to showcase how ETL data analysis, full-stack development, and machine learning can be used to impact human well-being in the future of healthcare.
 
 ### Why Disease Prediction?
 As a group, we wanted to work on something that we thought could have an impact on people. There are many people around the world suffering from various diseases. While this project will only function as a test, it is a good indication of what machine learning is capable of, and how it may be used in the future of healthcare.
@@ -31,9 +31,9 @@ As a group, we wanted to work on something that we thought could have an impact 
 
 5. Machine learning model is trained on encoded data.
 
-6. Machine learning model is saved as a pickle object.
+6. Machine learning model is saved as a pickle file.
 
-7. Flask hosts webpage where user checks any experienced symptoms and submits.
+7. Flask hosts webpage where user selects any experienced symptoms and submits.
 
 8. REST API call sent to Flask with boolean for each symptom.
 
@@ -44,11 +44,6 @@ As a group, we wanted to work on something that we thought could have an impact 
 11. API may also use a stored version of model's confusion matrix to suggest possible differential diagnosis.
 
 12. JSON returned by API call used to update webpage with disease information.
-
-## Why Disease Prediction?
-As a group, we wanted to work on something that we thought could have an impact on people. There are many people around the world suffering from various diseases. While this project will only function as a test, it is a good indication of what machine learning is capable of, and how it may be used in the future of healthcare.
-
-[Link to Google Slides Presentation](https://docs.google.com/presentation/d/17sEjf6EPZSJ9EY5Vl9RA3tWl3OAGQc6XCYFe-FfR_w0/edit?usp=sharing)
 
 ## Dataset
 
