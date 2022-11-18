@@ -48,6 +48,7 @@ SQL will be used to create a relational database with multiple tables for Diseas
   - "Disease_Precautions" (to provide possible precautions one can take if potentially facing one of the diseases)
   - "Symptom_Severity" (so that the symptoms of a disease can be weighed and more easily measured).
 * With our data imported, we use the "Disease_Descriptions" and "Disease_Precautions" tables to create a new joined table called "Disease_Info" with all information on the diseases. 
+* This disease information table can be used in the dashboard as well to provide further information about the user's disease results.
 * Now that we have some new tables, we can create new clean CSV files for them, and upload these to our repository Data section.
 
 ## Dashboard
