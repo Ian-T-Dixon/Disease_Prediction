@@ -8,19 +8,27 @@ This is to journal our upcoming goals and overall plan for the project. Accompli
 
 1. Dataset is first cleaned of typographical errors and replacements are made to values for clarity.
 
-2. A new table is created from the cleaned dataset, with boolean values for each symptom.
+2. Cleaned dataset is uploaded to SQL database.
 
-3. Cleaned dataset is uploaded to SQL database.
+3. ML model loads cleaned data from database using SQLAlchemy.
 
-4. ML model loads cleaned data.
+4. Cleaned dataset tranformed to boolean values for each symptom.
 
-5. ML model is trained on loaded data.
+5. ML model is trained on encoded data.
 
-6. Flask/Heroku are used to bring trained ML model to dashboard.
+6. ML model is saved as a pickle object.
 
-7. Dashboard calls stored tables (from database?) to present, for predicted illness, known symptoms and suggested precautions.
+7. Flask hosts webpage where user checks any experienced symptoms and submits.
 
-8. Dashboard may also used a stored version of model's confusion matrix, to suggest possible differential diagnosis.
+8. REST API call sent to Flask with boolean for each symptom.
+
+9. Flask uses unpickled model to make prediction.
+
+10. SQLAlchemy is used to lookup the disease from the database to retrieve description and precautions.
+
+11. API may also use a stored version of model's confusion matrix to suggest possible differential diagnosis.
+
+12. JSON returned by API call used to update webpage with disease information.
 
 ## Data Cleaning
 
@@ -34,18 +42,16 @@ The names of diseases and symptoms will be altered for clarity or typos in all f
 
 ## Database
 
-SQL
+PostgreSQL, pgAdmin, SQLAlchemy
 
-Week 2: An SQL query will need to be written to merge [disease_description.csv](./Data/disease_description.csv) and [disease_precaution.csv](./Data/disease_precaution.csv).
+An SQL query was written to merge [disease_description.csv](./Data/disease_description.csv) and [disease_precaution.csv](./Data/disease_precaution.csv).
 
-Week 3 or 4: A table can be created with data from the ML model's confusion matrix.
+Optional: A table can be created with data from the ML model's confusion matrix.
 
 ## Machine Learning
 
-Week 1: Set up input/output skeleton of model.
-
-Week 2: Data preprocessing, feature engineering, split train/test data, choose model.
+Gaussian Radial Basis Function (RBF) is a kernel function that is highly preferred for non-linear data of unknown distribution.
 
 ## Dashboard
 
-The trained ML model can be deployed to a webpage. Using Flask, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [disease_precaution.csv](./Data/disease_precaution.csv) and the ML confusion matrix.
+The trained ML model can be deployed to a webpage. Using Flask, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [disease_precaution.csv](./Data/disease_precaution.csv) and possibly the ML confusion matrix.
