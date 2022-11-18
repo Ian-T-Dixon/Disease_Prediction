@@ -16,7 +16,7 @@ def predict():
     # symptoms = request.form.getlist("symptom")
     # return jsonify(symptoms)
     if request.method == "POST":
-        bool_dict = request.get_json()
+        bool_dict = request.get_json(force=True)
         print(bool_dict)
         
         list_features = [True if bool(bool_dict[key]) else False

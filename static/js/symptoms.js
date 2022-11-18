@@ -3,7 +3,7 @@ function init() {
   var selector = d3.select("#symptomList");
 
   // Use the list of symptoms to populate the list of checkboxes
-  d3.json("./static/data/symptoms.json").then((data) => {
+  d3.json("../static/data/symptoms.json").then((data) => {
     var symptomNames = data.ID;
     symptomArray = Object.values(symptomNames);
 
