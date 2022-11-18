@@ -45,6 +45,11 @@ As a group, we wanted to work on something that we thought could have an impact 
 
 12. JSON returned by API call used to update webpage with disease information.
 
+## Why Disease Prediction?
+As a group, we wanted to work on something that we thought could have an impact on people. There are many people around the world suffering from various diseases. While this project will only function as a test, it is a good indication of what machine learning is capable of, and how it may be used in the future of healthcare.
+
+[Link to Google Slides Presentation](https://docs.google.com/presentation/d/17sEjf6EPZSJ9EY5Vl9RA3tWl3OAGQc6XCYFe-FfR_w0/edit?usp=sharing)
+
 ## Dataset
 
 The dataset contains four CSV files.

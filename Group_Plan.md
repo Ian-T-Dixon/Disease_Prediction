@@ -40,6 +40,9 @@ Instead of the columns in the [dataset.csv](./Data/dataset.csv) being "symptom 1
 
 The names of diseases and symptoms will be altered for clarity or typos in all four .csv files. Disease precautions will be similarly tidied. Those changes will be documented in the [data_changes](./Data/data_changes.md) file.
 
+Give categories for each symptom in symptom_severity.csv
+"Skin", "Mental", etc.
+
 ## Database
 
 PostgreSQL, pgAdmin, SQLAlchemy
