@@ -79,6 +79,10 @@ Decision Tree Classifier was trained with a max depth of 10 to prevent overfitti
 
 <!-- TODO: reframe/resize confusion matrices! -->
 
+![clf confusion matrix](/Images/clf_confusion_matrix.png)
+
+![svm confusion matrix](/Images/svm_confusion_matrix.png)
+
 The decision tree benchmark performed decently at nearly 95% accuracy, yet the [confusion matrix](/Images/clf_confusion_matrix.png) reveals a practical issue with the model: many illnesses are sometimes falsely predicted as heart attacks!
 
 The support vector machine performs at a better 98% accuracy and has a less worrying [confusion matrix](/Images/svm_confusion_matrix.png). Variations of hepatitis are sometimes confused with each other or another liver illness, chronic cholestasis. Drug reaction is sometimes misdiagnosed as acne, which should be straightforward for the end user to distinguish. This model appears to perform well in the context of accurately and reasonably diagnosing illness based on reported symptoms.
