@@ -43,7 +43,7 @@ As a group, we wanted to work on something that we thought could have an impact 
 
 11. API may also use a stored version of model's confusion matrix to suggest possible differential diagnosis.
 
-12. JSON returned by API call used to update webpage with disease information.
+12. JSON returned by API call is used to update webpage with disease information.
 
 ## Dataset
 
@@ -67,7 +67,7 @@ Many replacements were made to the dataset for the sake of clarity and consisten
 ### After
 ![bool_df](./Images/bool_df.png)
 
-Python readily interpets Boolean values as 1's and 0's. Consequently, this format is much easier for our machine learning model to interpret, as it is already encoded and scaled.
+Python readily interpets Boolean values as 1's and 0's. Consequently, this format is ready to be passed to the machine learning model, as it is already encoded and scaled.
 
 ## Machine Learning Model
 
