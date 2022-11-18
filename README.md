@@ -72,7 +72,7 @@ Many replacements were made to the dataset for the sake of clarity and consisten
 ### After
 ![bool_df](./Images/bool_df.png)
 
-Python readily interpets boolean values as 1's and 0's. Consequently, this format is much easier for any machine learning model to interpret, as it is already encoded and scaled.
+Python readily interpets Boolean values as 1's and 0's. Consequently, this format is much easier for our machine learning model to interpret, as it is already encoded and scaled.
 
 ## Machine Learning Model
 
