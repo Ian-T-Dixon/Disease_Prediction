@@ -1,6 +1,6 @@
 # Disease Prediction
 
-There are many people around the world suffering from various diseases. These diseases, each requiring unique treatment, can be diagnosed by the symptoms they cause. We aim to create a machine learning model that can make accurate predictions using symptoms experienced to predict the causative illness. This trained model will then be deployed to a webpage to accept user inputs and make real-time predictions. A database can be simultaneously be queried to load stored information on the predicted illness, including treatment options. We hope to showcase how ETL data analysis, full-stack development, and machine learning can be used to impact human well-being in the future of healthcare.
+There are many people around the world suffering from various diseases. These diseases, each requiring unique treatment, can be diagnosed by the symptoms they cause. We aim to create a machine learning model that can make accurate disease predictions using symptoms experienced. This trained model will then be deployed to a webpage to accept user inputs and make real-time predictions. A database can be simultaneously be queried to load stored information on the predicted illness, including treatment options. A database can be simultaneously be queried to load stored information on the predicted illness, including treatment options. We hope to showcase how ETL data analysis, full-stack development, and machine learning can be used to impact human well-being in the future of healthcare.
 
 ### Why Disease Prediction?
 As a group, we wanted to work on something that we thought could have an impact on people. There are many people around the world suffering from various diseases. While this project will only function as a test, it is a good indication of what machine learning is capable of, and how it may be used in the future of healthcare.
@@ -13,11 +13,11 @@ As a group, we wanted to work on something that we thought could have an impact 
 
 * PostgreSQL, pgAdmin, SQLAlchemy
 
-* sklearn, Decision Tree, Support Vector Machine
+* scikit-learn, Decision Tree, Support Vector Machine
 
 * HTML, CSS, JavaScript, Flask REST API
 
-## Planned Data Pipeline
+## Data Pipeline
 
 <!-- This section should stay written in the present tense. -->
 
@@ -37,7 +37,7 @@ As a group, we wanted to work on something that we thought could have an impact 
 
 8. REST API call sent to Flask with boolean for each symptom.
 
-9. Flask uses unpickled model to make prediction.
+9. Flask uses unpickled model to make disease prediction.
 
 10. SQLAlchemy is used to lookup the disease from the database to retrieve description and precautions.
 
@@ -105,4 +105,4 @@ The trained ML model can be deployed to a webpage. Using Flask and JavaScript, w
 We plan on using an API call to Flask to load the model prediction. The returned JSON object will also include information about the disease, such as a description and suggested treatment options. We will attempt to have Flask connect to the database using SQLAlchemy to lookup this information.
 
 ## Team Communication Protocol
-The team meets twice per week via Zoom and uses Slack to communicate as needed. There is a Group Plan file to help document our upcoming goals and overall plan for the project.
+The team met twice per week via Zoom during the main execution phase and uses Slack to communicate as needed. There is a Group Plan file to help document our goals and overall plan for the project.
