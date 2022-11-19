@@ -47,7 +47,7 @@ function createSymptomArray() {
   }
     delete outputDict.Submit
     console.log(outputDict)
-// sends json filetype to flask
+
     fetch('/predict', {
       headers : {
           'Content-Type' : 'application/json'
