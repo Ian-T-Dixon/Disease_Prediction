@@ -62,10 +62,13 @@ def home():
                     "precaution_3", "precaution_4"]
                 ]
                 
-        return render_template('index.html',
-			prediction_text=f'These symptoms appear to be caused by {prediction}.',
-			# Any additional parameters to be updated on index.html
-            # lookup_desc and lookup_care can be used
+        return render_template('predict.html',
+			prediction_text=prediction,
+			description_text=lookup_desc,
+            precaution_1=lookup_care[0],
+            precaution_2=lookup_care[1],
+            precaution_3=lookup_care[2],
+            external_link = f'https://www.webmd.com/search/search_results/default.aspx?query={prediction}'
             # placeholder_name = lookup_care[0]
 		)
 

@@ -38,22 +38,25 @@
                 </div>
                 
                 <div class="col-md-9">
-                    <div class="box">
-                    <p>
-                        Our Disease Prediction model uses machine learning to predict possible diseases based on a list of symptoms input by the user.
-                        We will also show you a brief description of the illness, precautions to take, as well as provide a link to external resources to use for further research. 
-                        This site is used for informational purposes only. 
-                        <br>
-                        <br>
-                        <b>If you are experiencing any of these symptoms, it is recommended to seek professional medical help.</b>
-                        <br>
-                        <br>
-                        Instructions for use:
-                        <br>
-                        Available symptoms are displayed to the left in alphabetical order. Use the checkboxes to select your symptoms and hit the submit button to see what our machine learning 
-                        model thinks is the possible disease.
-                    </p>
-                    </div>
+                    
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Predicted Disease</th>
+                                <th>Description</th>
+                                <th>Precautions</th>
+                                <th>External Resources</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="active-row">
+                                <td> {{ prediction_text }} </td>
+                                <td> {{ description_text }}</td>
+                                <td> 1. {{ precaution_1 }}.<br><br>2. {{ precaution_2 }}.<br><br>3. {{ precaution_3 }}.</td>
+                                <td> <a href="{{external_link}}", target="_blank">WebMD</a>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>   
         </div>
@@ -62,3 +65,4 @@
     <script src="../static/js/symptoms.js"></script>
 </body>
 </html>
+
