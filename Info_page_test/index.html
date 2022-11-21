@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Info</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="bg-dark">
+    <div class="wrapper">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" href="http://127.0.0.1:5500/templates/index.html">Symptoms Test Page</a>
+          </nav>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-4"><b>Disease Information Hub</b></h1>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Filter<small></small></h3>
+          </div>
+          <div class="col-md-5">
+            <p>
+              Here you can find some information relating to specific diseases, as well as some possible precautions you can take while awaiting proper medical attention.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <!-- <form class="bg-dark"> -->
+                <p></p>
+                <ul class="list-group bg-dark">
+                  <li class="list-group-item bg-dark">
+                    <label for="disease">Disease</label><br>
+                    <input type="text" placeholder="Drug Reaction" id="disease" />
+                </ul>
+               <!-- </form> -->
+          </div>
+          <div class="col-md-9">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Disease</th>
+                  <th>Description</th>
+                  <th>Precaution 1</th>
+                  <th>Precaution 2</th>
+                  <th>Precaution 3</th>
+                  <th>Precaution 4</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+      <script src="static/js/data.js"></script>
+      <script src="static/js/app.js"></script>
+</body>
+</html>

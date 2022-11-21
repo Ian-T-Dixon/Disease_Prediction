@@ -265,7 +265,7 @@ Rtree @ file:///C:/ci/rtree_1618421019532/work
 ruamel-yaml-conda @ file:///C:/ci/ruamel_yaml_1616016865685/work
 s3transfer @ file:///tmp/build/80754af9/s3transfer_1626435152308/work
 scikit-image @ file:///C:/ci/scikit-image_1648196140109/work
-scikit-learn==1.0.1
+scikit-learn==1.0.2
 scikit-learn-intelex==2021.20220215.153008
 scipy @ file:///C:/ci/scipy_1641555141383/work
 Scrapy @ file:///C:/ci/scrapy_1646837957672/work

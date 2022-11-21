@@ -11,7 +11,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body class="bg-light">
     <div class="wrapper">
@@ -31,6 +31,9 @@
                         Our Disease Prediction model uses machine learning to accurately predict possible diseases based on a list of symptoms input by the user. Simply input all of the symptoms experienced
                         and we will determine the likely illness. We will also show you the confidence in the prediction, a brief description of the illness, precautions to take, as well as a list of other possible
                         diseases. If you are experiencing any of these symptoms, it is recommended to seek professional medical help.
+                        <br>
+                        <br>
+                        {{ prediction_text }}
                     </p>
                 </div>
             </div>
@@ -39,14 +42,16 @@
                     <div class="col-md-3">
                         <h4> Symptom Options:</h4>
                             <div class="symptoms-container">
-                                <form id="symptomList", onSubmit="createSymptomArray()", action="{{ url_for('predict')}}"method="post">
+                                <form id="symptomList", action="/" method="post">
                                     <div class="submit-section">
                                         
                                     </div>
                                 </form>
                             </div>
                             <br>
+                            <!-- Use table to place 'Submit' and 'Clear All' -->
                             <input type="submit" value="Submit" form="symptomList">
+                            <!-- 'Clear All' button goes here -->
                     </div>
                     <div class="col-md-9">
                         <div class="col-md-5">
@@ -66,6 +71,6 @@
         </div>
     </div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="./static/js/symptoms.js"></script>
+    <script src="../static/js/symptoms.js"></script>
 </body>
 </html>
