@@ -68,7 +68,6 @@ CREATE TABLE dataset_bool (
   ,Disease                        VARCHAR(30) NOT NULL
   ,abdominal_pain                 BOOLEAN  NOT NULL
   ,abnormal_menstruation          BOOLEAN  NOT NULL
-  ,acidity                        BOOLEAN  NOT NULL
   ,acute_liver_failure            BOOLEAN  NOT NULL
   ,altered_mental_state           BOOLEAN  NOT NULL
   ,anxiety                        BOOLEAN  NOT NULL
@@ -111,6 +110,7 @@ CREATE TABLE dataset_bool (
   ,fluid_overload                 BOOLEAN  NOT NULL
   ,foul_smell_of_urine            BOOLEAN  NOT NULL
   ,headache                       BOOLEAN  NOT NULL
+  ,heartburn                      BOOLEAN  NOT NULL
   ,high_fever                     BOOLEAN  NOT NULL
   ,hip_joint_pain                 BOOLEAN  NOT NULL
   ,history_of_alcohol_consumption BOOLEAN  NOT NULL
