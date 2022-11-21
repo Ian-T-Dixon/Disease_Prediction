@@ -1,25 +1,33 @@
 from flask import Flask, request, render_template
 import numpy as np
-import pickle
-import csv
+import json, pickle
+
+import urllib.parse
+from sqlalchemy import create_engine
+import psycopg2
+
+import sys, os
+sys.path.append(os.path.abspath(os.path.join('../..')))
+from config import db_password
 
 app = Flask(__name__)
 
 # Unpickle trained ML model
-# SWITCH back to svm_model after fixing 'acidity' symptom
-model = pickle.load(open('./static/data/rfc_model.pkl', 'rb'))
+model = pickle.load(open('./static/data/svm_model.pkl', 'rb'))
 
-# Read all possible symptoms into stored list
-# TODO: Update this file with new symptom names
-# May connect to SQL database instead for symptom names
-with open('./static/data/symptoms_alpha.csv', newline='') as f:
-    reader = csv.reader(f)
-    symptom_list = sorted(
-        [x[0] for x in reader][1:]      # [1:] ignores header
-    )
+# Store SQL connection string
+db_string = f"postgresql://postgres:{urllib.parse.quote(db_password)}\
+@127.0.0.1:5432/disease_prediction"
 
-# Save loaded symptoms from .csv or SQL query as json file
-# Have Flask do this on startup to ensure compatability
+# Get column names from model training set and store as list
+with create_engine(db_string).connect() as engine:
+    result = engine.execute("SELECT * FROM dataset_bool WHERE False").keys()
+    symptom_list = [x for x in result][1:]
+
+# Save loaded symptoms from SQL query as json file
+# Have Flask do this on startup to ensure compatibility
+with open('./static/data/symptoms.json', 'w') as f:
+    json.dump(symptom_list, f)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -29,7 +37,6 @@ def home():
         bool_dict = request.form.to_dict()
 
         # Fill in False values for the unchecked symptoms
-        # symptoms.json should match the source of symptom_list
         for symptom in symptom_list:
             if symptom not in bool_dict:
                 bool_dict[symptom] = False
@@ -42,10 +49,24 @@ def home():
         # Pass boolean array to model for prediction
         prediction = model.predict(array_features)[0]
 
+        # Connect to SQL database to get more disease info
+        with create_engine(db_string).connect() as engine:
+            result = engine.execute(
+                f"SELECT * FROM disease_info WHERE disease = '{prediction}'"
+            )
+
+            for row in result.mappings():
+                lookup_desc = row["description"]
+                lookup_care = [row[x] for x in
+                ["precaution_1", "precaution_2",
+                    "precaution_3", "precaution_4"]
+                ]
+                
         return render_template('index.html',
-			prediction_text='These symptoms appear to be caused by {}.'
-				.format(prediction),
+			prediction_text=f'These symptoms appear to be caused by {prediction}.',
 			# Any additional parameters to be updated on index.html
+            # lookup_desc and lookup_care can be used
+            # placeholder_name = lookup_care[0]
 		)
 
     else:
