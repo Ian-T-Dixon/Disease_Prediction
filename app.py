@@ -42,7 +42,7 @@ def home():
                 bool_dict[symptom] = False
 
         # List of T/F for alphabetically sorted symptoms
-        list_features = [True if bool(bool_dict[key]) else False
+        list_features = [bool(bool_dict[key])
                          for key in sorted(bool_dict)]
         array_features = [np.array(list_features)]
 
@@ -69,7 +69,6 @@ def home():
             precaution_2=lookup_care[1],
             precaution_3=lookup_care[2],
             external_link = f'https://www.webmd.com/search/search_results/default.aspx?query={prediction}'
-            # placeholder_name = lookup_care[0]
 		)
 
     else:
