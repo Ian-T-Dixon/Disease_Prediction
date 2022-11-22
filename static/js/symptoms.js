@@ -11,6 +11,7 @@ function init() {
       selector
         .append("input")
         .property("type", "checkbox")
+        .property("className", "symp_box")
         .property("value", "True")
         .property("id", symptom)
         .property("name", symptom)

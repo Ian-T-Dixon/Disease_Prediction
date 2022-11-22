@@ -1,12 +1,27 @@
 .symptoms-container { 
-  border:2px solid #ccc; 
-  width:300px; 
-  height: 400px; 
+  border:2px solid #2591b3; 
+  width:100%; 
+  height: 4%; 
   overflow-y: scroll; 
 }
 
+.symptoms-container::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .symptoms-container::-webkit-scrollbar-track {
+    background: #2591b3;
+  }
+
+  .symptoms-container::-webkit-scrollbar-thumb{
+    height: 10%;
+    border-radius: 10px;
+    background: #f5f5f5;
+  }
+
 .navbar.navbar-dark.navbar-expand-lg {
-  background-color: #2591b3;
+  background-image: linear-gradient(#2aadd4, #2591b3);
   border-bottom: 5px solid white;
 }
 
@@ -14,6 +29,7 @@
   -webkit-text-fill-color: #ffffff;
   -webkit-text-stroke-color: #ffffff;
   -webkit-text-stroke-width: 1px;
+  padding: 25px 0;
   text-shadow: 3px 3px 10px rgba(1, 22, 29, 0.75);
   font-family: Arial, Helvetica, sans-serif;
   background-image: url("../images/disease.jpg");
@@ -28,6 +44,11 @@
   height: 200px;
 }
 
+
+.row {
+  align-content: center;
+}
+
 .box {
   width: 100%;
   height: 100%;
@@ -40,16 +61,26 @@
   padding: 5px;
 }
 
+form {
+  color: #2591b3;
+  font-weight:600;
+}
+
 p {
-  font-size: 20px;
+  font-size: 18px;
   -webkit-text-fill-color: #ffffff;
   -webkit-text-size-adjust: auto;
+}
+
+h1.display-4 {
+  font-size: 75px;
 }
 
 h3 {
   -webkit-text-fill-color: #ffffff;
   padding: 3px;
   align-content: justify;
+  font-size: 30px;
 }
 
 h4 {
@@ -60,23 +91,82 @@ h4 {
 
 .symptoms-container {
   -webkit-text-fill-color: #2591b3;
-  padding: 3px;
+  padding: 15px;
   align-content: left;
+  font-size: 18px;
+}
+
+.symp_box{
+  width: 18px;
+  height: 18px;
+}
+
+label{
+  padding-left: 10px;
+}
+
+input[type=submit] {
+    background-color: #2591b3;
+    background-image: linear-gradient(#2591b3, #2aadd4);
+    border: 1px solid #2591b3;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-family: -apple-system,".SFNSDisplay-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    line-height: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 11px 15px 12px;
+    text-align: center;
+    transition: box-shadow .05s ease-in-out,opacity .05s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 50%;
+  }
+
+
+  input[type=submit]:hover {
+  box-shadow: rgba(255, 255, 255, 0.3) 0 0 4px inset, rgba(0, 0, 0, 0.4) 0 1px 2px;
+  text-decoration: none;
+  transition-duration: .15s, .15s;
+}
+
+input[type=submit]:active {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 4px inset, rgba(0, 0, 0, 0.4) 0 1px 1px;
+}
+
+input[type=submit]:disabled {
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+input[type=submit]:disabled:active {
+  pointer-events: none;
+}
+
+input[type=submit]:disabled:hover {
+  box-shadow: none;
 }
 
 .col-md-9 {
   width: 100%;
-  height: 20%;
+  height: 100%;
+  align-content: center;
+  padding-top: 40px;
 }
 
 .styled-table {
   border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
+  font-size: 18px;
   font-family: sans-serif;
   min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  border:solid rgb(236, 234, 234) 1px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -96,7 +186,7 @@ tr:last-of-type td:last-of-type {
 
 .styled-table thead tr {
   background-color: #2591b3;
-  color: #f1f1f1;
+  color: #ffffff;
   text-align: left;
   
 }
@@ -107,7 +197,7 @@ tr:last-of-type td:last-of-type {
 }
 
 .styled-table tbody tr {
-  border-bottom: 1px solid #dddddd;
+  border-bottom-right-radius: 10px;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
@@ -115,7 +205,7 @@ tr:last-of-type td:last-of-type {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #2591b3;
+  background-color: #2591b3;
 }
 
 .styled-table tbody tr.active-row {
