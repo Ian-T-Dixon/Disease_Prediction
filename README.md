@@ -35,15 +35,15 @@ As a group, we wanted to work on something that we thought could have an impact 
 
 7. Flask hosts webpage where user selects any experienced symptoms and submits.
 
-8. REST API call sent to Flask with boolean for each symptom.
+8. POST request sent to Flask with boolean for each symptom.
 
 9. Flask uses unpickled model to make disease prediction.
 
 10. SQLAlchemy is used to lookup the disease from the database to retrieve description and precautions.
 
-11. API may also use a stored version of model's confusion matrix to suggest possible differential diagnosis.
+11. Flask server may also use a stored version of model's confusion matrix to suggest possible differential diagnosis.
 
-12. Information returned by API call is used to update webpage with disease information.
+12. Information returned by POST request is used to update webpage with disease information.
 
 ## Dataset
 
