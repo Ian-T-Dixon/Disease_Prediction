@@ -8,8 +8,14 @@ There are many people around the world suffering from various diseases. These di
 
 Run the following in the root folder to create the necessary virtual environment:
 ```
+conda create -n disease-prediction --file spec-file.txt
+```
+<!--
+This doesn't seem to work. It should be done in a new virtual environment.
+```
 pip install -r requirements.txt
 ```
+ -->
 
 Rename '[config_blank.py](config_blank.py)' to 'config.py' and move it to the folder grandparent to the local repo folder on your machine. Store credentials for your local Postgres database in this file.
 
@@ -115,8 +121,9 @@ RandomForestClassifier is currently used to supply predictions to the website da
 
 SQL was used to create a relational database with tables for the main dataset before and afer encoding, disease description and precautions, and symptom information.
 
-* The first step in loading the dataset into the SQL database is to create tables in a format comparable to the data that will populate those tables.
-* The four tables initially created are:
+The first step in loading the dataset into the SQL database is to create tables in a format comparable to the data that will populate those tables.
+
+The four tables initially created are:
   - **"disease_cases"** (training dataset of symptoms per instance of disease) 
   - **"disease_descriptions"** (brief description of each disease in the dataset)
   - **"disease_precautions"** (list of precautions to take if facing threat of predicted disease)
