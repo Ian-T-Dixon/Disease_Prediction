@@ -40,7 +40,7 @@ We plan to use Heroku to publicly host the project webpage and database.
 
 6. Trained machine learning model is saved as a pickle file.
 
-7. Flask hosts website dashboard where user selects any experienced symptoms and submits.
+7. Flask hosts website dashboard where user selects any experienced symptoms and submits a form.
 
 8. POST request sent to Flask with Boolean for each symptom.
 
@@ -76,12 +76,12 @@ SQLAlchemy is used to update the database directly from Pandas DataFrames (rathe
 
 ## Data Cleaning & Processing
 
-Using Python dictionaries and DataFrame.replace(), many replacements were made to the dataset for the sake of clarity and consistency. The main dataset of disease symptoms per case was then transformed to contain columns for every possible symptom, each containing boolean values.
+Using Python dictionaries and pandas.DataFrame.replace(), many replacements were made to the dataset for the sake of clarity and consistency. The main dataset of disease symptoms per case was then transformed to contain columns for every possible symptom, each containing boolean values.
 
-### Before
+### **Before Encoding**
 ![data_df](./Images/data_df.png)
 
-### After
+### **After Encoding**
 ![bool_df](./Images/bool_df.png)
 
 Python readily interpets Boolean values as 1's and 0's. Consequently, this format is ready to be passed to the machine learning model, as it is already encoded and scaled.
@@ -102,13 +102,13 @@ The support vector machine performs at a better 98% accuracy and has a less worr
 
 ![svm_confusion_matrix](/Images/svm_confusion_matrix.png)
 
-Despite the above, the SVM model performed poorly when passed symptoms by the website end-user. One or two symptoms chosen at random usually resulted in a diagnosis of heart attack, producing a model prone to the same weaknesses as the Decision Tree Classifier. We postulate that the many varied symptoms demonstrated during heart attacks contribute to a large volume separating it from the symptom clusters more unique to other diseases.
+Despite the above, the SVM model performed poorly when passed symptoms by the website end-user. One or two symptoms chosen at random usually resulted in a diagnosis of heart attack, producing a model prone to the same weaknesses as the Decision Tree Classifier. We postulate that the many varied symptoms demonstrated during heart attacks contribute to a large dimensional volume separating it from the symptom clusters more unique to other diseases.
 
 RandomForestClassifier is currently used to supply predictions to the website dashboard, being the least worrisome upon passing more realistically random symptoms.
 
 ## Database
 
-SQL was used to create a relational database with tables for the main dataset before and afer encoding, disease description and precautions, symptom information.
+SQL was used to create a relational database with tables for the main dataset before and afer encoding, disease description and precautions, and symptom information.
 
 * The first step in loading the dataset into the SQL database is to create tables in a format comparable to the data that will populate those tables.
 * The four tables initially created are:
@@ -120,7 +120,7 @@ SQL was used to create a relational database with tables for the main dataset be
 * **"dataset_bool"** is the encoded dataset used to train the machine learning model. The list of symptom checkboxes on the website dashboard is populated from its column names.
 
 ## Website Dashboard
-The trained ML model can deployed to a webpage using Flask, a RESTful API server that, like the trained model, also runs on Python. This simple webpage allows the user to input experienced symptoms and view the model's disease prediction. Flask also connects to the database using SQLAlchemy to lookup information about the disease, such as a description and suggested treatment options, pulled from the joined "disease_info" table. This information is then used to update the webpage and is displayed to the website end-user.
+The trained ML model can deployed to a webpage using Flask, a RESTful API server that, like the trained model, also runs on Python. This simple webpage allows the user to input experienced symptoms and view the model's disease prediction. Flask also connects to the database using SQLAlchemy to lookup information about the disease, such as a description and suggested treatment options, pulled from the joined "**disease_info**" table. This information is then used to update the webpage and is displayed to the website end-user.
 
 ## Team Communication Protocol
 The team met twice per week via Zoom during the main execution phase and uses Slack to communicate as needed. There is a Group Plan file to help document our goals and overall plan for the project.
