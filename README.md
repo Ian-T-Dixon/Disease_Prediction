@@ -6,6 +6,11 @@ There are many people around the world suffering from various diseases. These di
 
 ## Installing and Running Locally
 
+Run the following in the root folder to create the necessary virtual environment:
+```
+pip install -r requirements.txt
+```
+
 Rename '[config_blank.py](config_blank.py)' to 'config.py' and move it to the folder grandparent to the local repo folder on your machine. Store credentials for your local Postgres database in this file.
 
 Play through the [exploratory_analysis](exploratory.ipynb), [machine_learning](machine_learning.ipynb), and [csv_to_sql](csv_to_sql.ipynb) notebooks to upload the DataFrames to the local database.
