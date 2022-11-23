@@ -1,6 +1,6 @@
 # Disease Prediction
 
-There are many people around the world suffering from various diseases. These diseases, each requiring unique treatment, can be diagnosed by the symptoms they cause. We created a machine learning model that can make accurate disease predictions using symptoms experienced. This trained model can be deployed to a webpage to accept user inputs and make real-time predictions. A database is simultaneously be queried to load stored information on the predicted illness, including treatment options. We showcase how ETL data analysis, full-stack development, and machine learning can be used to impact human well-being in the future of healthcare.
+There are many people around the world suffering from various diseases. These diseases, each requiring unique treatment, can be diagnosed by the symptoms that they cause. We have created a machine learning model that can make accurate disease predictions using symptoms experienced. This trained model can be deployed to a webpage to accept user inputs and make real-time predictions. A database is simultaneously be queried to load stored information on the predicted illness, including treatment options. We showcase how ETL data analysis, full-stack development, and machine learning can be used to impact human well-being in the future of healthcare.
 
 [Google Slides](https://docs.google.com/presentation/d/17sEjf6EPZSJ9EY5Vl9RA3tWl3OAGQc6XCYFe-FfR_w0/edit?usp=sharing) was used to present our development journey and findings to our mentors and peers.
 
@@ -66,17 +66,17 @@ The original dataset contains 4 tabular files:
 
 * [Symptom Severity](./Data/Cleaned/symptom_severity_clean.csv) is a list of all symptoms with a weight to indicate severity.
 
-Two more tables are created programmatically:
+Two more tables are created from the existing data:
 
-* [Disease Info](./Data/Cleaned/disease_info.csv) is the result of joining Disease Description and Disease Precaution, and is used by Flask to give the end-user information on the predicted disease.
+* [Disease Info](./Data/Cleaned/disease_info.csv) is the result of joining Disease Description and Disease Precaution on name of Disease, and is used by Flask to give the end-user information on the predicted disease.
 
-* [Boolean Dataset](./Data/Cleaned/dataset_bool.csv) is the encoded dataset (see After, below). To make predictions, the model expects symptoms passed in this format of Boolean per symptom.
+* [Boolean Dataset](./Data/Cleaned/dataset_bool.csv) is the encoded dataset (see After, below). To make predictions, the model expects symptoms passed in this format of Boolean per alphabetical symptom.
 
 SQLAlchemy is used to update the database directly from Pandas DataFrames (rather than the exported .csv files).
 
 ## Data Cleaning & Processing
 
-Using Python dictionaries and pandas.DataFrame.replace(), many replacements were made to the dataset for the sake of clarity and consistency. The main dataset of disease symptoms per case was then transformed to contain columns for every possible symptom, each containing boolean values.
+Using Python dictionaries and pandas.DataFrame.replace(), many replacements were made to the dataset for the sake of clarity and consistency. The main dataset of disease symptoms per case was then transformed to contain columns for every possible symptom, each containing Boolean values.
 
 ### **Before Encoding**
 ![data_df](./Images/data_df.png)
@@ -116,11 +116,13 @@ SQL was used to create a relational database with tables for the main dataset be
   - **"disease_descriptions"** (brief description of each disease in the dataset)
   - **"disease_precautions"** (list of precautions to take if facing threat of predicted disease)
   - **"symptom_severity"** (weights are ultimately disregarded. Categories are later assigned to each symptom for easier sorting on the website dashboard).
-* The **"disease_info"** table is created by joining the "disease_descriptions" and "disease_precautions" tables and gives the user additional information on the predicted disease.
+
+The following tables are created from this data:
+* **"disease_info"** is created by joining the "disease_descriptions" and "disease_precautions" tables and gives the dashbend-user additional information on the predicted disease.
 * **"dataset_bool"** is the encoded dataset used to train the machine learning model. The list of symptom checkboxes on the website dashboard is populated from its column names.
 
 ## Website Dashboard
-The trained ML model can deployed to a webpage using Flask, a RESTful API server that, like the trained model, also runs on Python. This simple webpage allows the user to input experienced symptoms and view the model's disease prediction. Flask also connects to the database using SQLAlchemy to lookup information about the disease, such as a description and suggested treatment options, pulled from the joined "**disease_info**" table. This information is then used to update the webpage and is displayed to the website end-user.
+The ML model, compiled and trained in Python, can deployed to a webpage using a Python server and Pickle, a module that faithfully loads saved ("pickled") Python objects. The webpage, hosted by Flask via Python, allows the user to input experienced symptoms and view the unpickled model's disease prediction. The Flask server also connects to the database using SQLAlchemy to lookup information about the disease, such as a description and suggested treatment options, pulled from the joined "**disease_info**" table. This information is then used to update the webpage and is displayed to the website end-user.
 
 ## Team Communication Protocol
 The team met twice per week via Zoom during the main execution phase and uses Slack to communicate as needed. There is a Group Plan file to help document our goals and overall plan for the project.
