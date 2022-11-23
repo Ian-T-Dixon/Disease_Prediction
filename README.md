@@ -59,6 +59,7 @@ SQL will be used to create a relational database with multiple tables for Diseas
 ![Boolean_snippet](Images/Boolean_table_example.JPG)
 
 * Following the creation of the Database, we were able to use SQL alchemy to connect the database directly to our analysis and machine learning models. 
+* With SQL alchemy connecting directly to the database, we could pull, or update, or create new tables and CSV files throough jupyter. This would be very helpful in updating the tables live as the data was cleaned. 
 
 ## Dashboard
 The trained ML model can be deployed to a webpage. Using Flask/JavaScript, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [symptom_precaution.csv](./Data/symptom_precaution.csv) 
