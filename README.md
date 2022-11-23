@@ -1,6 +1,6 @@
 # Disease Prediction
 
-There are many people around the world suffering from various diseases. These diseases, each requiring unique treatment, can be diagnosed by the symptoms that they cause. We have created a machine learning model that can make accurate disease predictions using symptoms experienced. This trained model can be deployed to a webpage to accept user inputs and make real-time predictions. A database is simultaneously be queried to load stored information on the predicted illness, including treatment options. We showcase how ETL data analysis, full-stack development, and machine learning can be used to impact human well-being in the future of healthcare.
+There are many people around the world suffering from various diseases. These diseases, each requiring unique treatment, can be diagnosed by the symptoms that they cause. We have created a machine learning model that can make accurate disease predictions using symptoms experienced. This trained model can be deployed to a webpage to accept user inputs and make real-time predictions. A database is simultaneously queried to load stored information on the predicted illness, including treatment options. We showcase how ETL data analysis, full-stack development, and machine learning can be used to impact human well-being in the future of healthcare.
 
 [Google Slides](https://docs.google.com/presentation/d/17sEjf6EPZSJ9EY5Vl9RA3tWl3OAGQc6XCYFe-FfR_w0/edit?usp=sharing) was used to present our development journey and findings to our mentors and peers.
 
