@@ -1,6 +1,6 @@
 # Disease Prediction
 
-There are many people around the world suffering from various diseases. These diseases, each requiring unique treatment, can be diagnosed by the symptoms they cause. We aim to create a machine learning model that can make accurate disease predictions using symptoms experienced. This trained model will then be deployed to a webpage to accept user inputs and make real-time predictions. A database can be simultaneously be queried to load stored information on the predicted illness, including treatment options. We hope to showcase how ETL data analysis, full-stack development, and machine learning can be used to impact human well-being in the future of healthcare.
+There are many people around the world suffering from various diseases. These diseases, each requiring unique treatment, can be diagnosed by the symptoms they cause. We created a machine learning model that can make accurate disease predictions using symptoms experienced. This trained model can be deployed to a webpage to accept user inputs and make real-time predictions. A database can be simultaneously be queried to load stored information on the predicted illness, including treatment options. We hope to showcase how ETL data analysis, full-stack development, and machine learning can be used to impact human well-being in the future of healthcare.
 
 ### Why Disease Prediction?
 As a group, we wanted to work on something that we thought could have an impact on people. There are many people around the world suffering from various diseases. While this project will only function as a test, it is a good indication of what machine learning is capable of, and how it may be used in the future of healthcare.
@@ -100,9 +100,7 @@ SQL will be used to create a relational database with multiple tables for Diseas
 * Now that we have some new tables, we can create new clean CSV files for them, and upload these to our repository Data section.
 
 ## Dashboard
-The trained ML model can be deployed to a webpage. Using Flask and JavaScript, we can build a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. Recommendations for treatment/precautions can be displayed, based on [symptom_precaution.csv](./Data/symptom_precaution.csv) 
-
-We plan on using an API call to Flask to load the model prediction. The returned JSON object will also include information about the disease, such as a description and suggested treatment options. We will attempt to have Flask connect to the database using SQLAlchemy to lookup this information.
+The trained ML model can be deployed to a webpage. Using Flask and JavaScript, we built a simple webpage that will allow the user to input symptoms they are experiencing and view the model's prediction of their illness. A POST request is sent to Flask to get the model's prediction from the symptoms. Flask also connects to the database using SQLAlchemy to lookup information about the disease, such as a description and suggested treatment options, pulled from the joined "Disease_Info" table. This information is then used to update the webpage and is displayed to the user.
 
 ## Team Communication Protocol
 The team met twice per week via Zoom during the main execution phase and uses Slack to communicate as needed. There is a Group Plan file to help document our goals and overall plan for the project.

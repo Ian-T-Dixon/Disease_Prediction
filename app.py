@@ -13,7 +13,7 @@ from config import db_password
 app = Flask(__name__)
 
 # Unpickle trained ML model
-model = pickle.load(open('./static/data/svm_model.pkl', 'rb'))
+model = pickle.load(open('./static/data/rfc_model.pkl', 'rb'))
 
 # Store SQL connection string
 db_string = f"postgresql://postgres:{urllib.parse.quote(db_password)}\
@@ -52,14 +52,14 @@ def home():
         # Connect to SQL database to get more disease info
         with create_engine(db_string).connect() as engine:
             result = engine.execute(
-                f"SELECT * FROM disease_info WHERE disease = '{prediction}'"
+                f"SELECT * FROM disease_info WHERE \"Disease\" = '{prediction}'"
             )
 
             for row in result.mappings():
-                lookup_desc = row["description"]
+                lookup_desc = row["Description"]
                 lookup_care = [row[x] for x in
-                ["precaution_1", "precaution_2",
-                    "precaution_3", "precaution_4"]
+                ["Precaution_1", "Precaution_2",
+                    "Precaution_3", "Precaution_4"]
                 ]
                 
         return render_template('predict.html',

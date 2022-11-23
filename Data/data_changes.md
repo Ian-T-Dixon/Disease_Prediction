@@ -52,6 +52,7 @@ The following replacements were done across all four .csv files using Pandas.
 * "(vertigo) Paroymsal  Positional Vertigo" -> "Positional vertigo"
 * "Osteoarthristis" -> "Osteoarthritis"
 * "Typhoid" -> "Typhoid fever"
+* "Peptic ulcer diseae" -> "Peptic ulcer disease"
 
 <!-- line break -->
 
