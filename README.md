@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 Rename '[config_blank.py](config_blank.py)' to 'config.py' and move it to the folder grandparent to the local repo folder on your machine. Store credentials for your local Postgres database in this file.
 
-Play through the [exploratory_analysis](exploratory.ipynb), [machine_learning](machine_learning.ipynb), and [csv_to_sql](csv_to_sql.ipynb) notebooks to upload the DataFrames to the local database.
+Play through the [csv_to_sql](csv_to_sql.ipynb) notebook to upload the tables to the local database.
 
 We plan to use Heroku to publicly host the project webpage and database.
 
@@ -109,7 +109,7 @@ The decision tree benchmark performed decently at nearly 95% accuracy, yet the c
 
 ![clf_confusion_matrix](/Images/clf_confusion_matrix.png)
 
-The support vector machine performs at a better 98% accuracy and has a less worrying confusion matrix. Variations of hepatitis are sometimes confused with each other or another liver illness, chronic cholestasis. Drug reaction is sometimes misdiagnosed as acne, which should be straightforward for the end user to distinguish. This model appears to perform well in the context of accurately and reasonably diagnosing illness based on reported symptoms.
+The support vector machine performs at a better 98% accuracy and has a less worrying confusion matrix. A liver illness, chronic cholestasis, is sometimes misdiagnosed as hepatitis. Drug reaction is sometimes misdiagnosed as acne, which should be straightforward for the end user to distinguish. This model appears to perform well in the context of accurately and reasonably diagnosing illness based on reported symptoms.
 
 ![svm_confusion_matrix](/Images/svm_confusion_matrix.png)
 
